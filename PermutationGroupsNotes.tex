@@ -560,7 +560,7 @@ If $X = \{1,\ldots,n\}$, then it is fairly straightforward to verify that $\Sym(
 It's a good time to meet some new permutation groups as we continue our investigation of $k$-transitivity. 
 
 \begin{example}\label{exam.AGL1R}
-Let's take a look at a particular group of permutations on $\mathbb{R}$. Specifically, we will consider the set of invertible linear functions: \[\AGL_1(\mathbb{R}) = \{ f \in \Sym(\mathbb{R}) \mid \text{$f(x) = mx+b$ for some $m,b\in \mathbb{R}$ with $m\neq 0$}\}.\]
+Let's take a look at a particular group of permutations on $\mathbb{R}$. Specifically, we will consider the set of invertible (affine) linear functions: \[\AGL_1(\mathbb{R}) = \{ f \in \Sym(\mathbb{R}) \mid \text{$f(x) = mx+b$ for some $m,b\in \mathbb{R}$ with $m\neq 0$}\}.\]
 It can be checked that $\AGL_1(\mathbb{R})$ satisfies the necessary closure axioms to be a permutation group on $\mathbb{R}$. Let's determine how transitive this action is.
 
 Is the action transitive? Yes. For all $r,s\in \mathbb{R}$, the translation $f(x) = x + (s-r)$ is in $\AGL_1(\mathbb{R})$ and $f(r) = s$, so $\AGL_1(\mathbb{R})$ has a single orbit on $\mathbb{R}$.
@@ -594,6 +594,13 @@ For $F$ a field, we define \[\AGL_1(F) = \{ f \in \Sym(F) \mid \text{$f(x) = mx+
 Essentially the same proof we gave in Example~\ref{exam.AGL1R} shows that, for any field $F$, $\AGL_1(F)$ acts $2$-transitively on $F$. Moreover, if $|F| \ge 4$, then the action is \emph{not} $3$-transitive. 
 \end{remark*}
 
+The group $\AGL_1(F)$ can be generalized in (at least) a couple of ways. One way is to directly adapt the definition to give functions from $F^n$ to $F^n$ by considering functions $f(x) = mx+b$ where $m$ is an $n\times n$ matrix and $b$ an $n$-vector. 
+
+\begin{definition*}
+For $F$ a field, let $\GL_{n}(F)$ denote all \emph{invertible} $n\times n$ matrices with entries from $F$, and define
+\[\AGL_n(F) = \{ f \in \Sym(F^n) \mid \text{$f(\bar{x}) = A\bar{x}+\bar{b}$ for some $A\in \GL_{n}(F)$ and some $\bar{b} \in F^n$}\}.\]
+We refer to $\AGL_n(F)$ as the \textbf{affine general linear group} of degree $n$.
+\end{definition*}
 
 
 
