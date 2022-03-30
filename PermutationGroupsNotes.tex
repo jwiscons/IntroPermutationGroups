@@ -526,18 +526,19 @@ And finally, we also know that $G_{1,2}$ must fix every vertex, but the only ele
 \section{Degrees of symmetry}\label{S:multipletrans}
 
 Which would you say is ``more symmetric'': a regular tetrahedron or a cube? Why? 
-A first thought may be to say that an object is more symmetric if it has more symmetries. With that point of view, a cube would be more symmetric than a tetrahedron since our work in Examples~\ref{exam:Tetra} and \ref{exam:Cube} implies that $|\symcube| = 48 > 24 = |\symtetra|$. However, this approach seems to privilege the cube simply because it has more vertices. 
+A first thought may be that an object is more symmetric if it has more symmetries. With that point of view, a cube would be more symmetric than a tetrahedron since our work in Examples~\ref{exam:Tetra} and \ref{exam:Cube} implies that $|\symcube| = 48 > 24 = |\symtetra|$. However, this approach seems to privilege the cube simply because it has more vertices. 
 
-Let's work towards another approach to measuring symmetry. We saw that there is a symmetry taking any vertex of the tetrahedron to any other, and the same is true for a cube. As such, we think of the vertices as being indistinguishable. But now, what if we ask about pairs of vertices. Notice that any two vertices of a tetrahedron can be simultaneously moved to any other two vertices. However, the same is \emph{not} true for the cube: a pair of antipodal vertices can never be simultaneously moved to a pair of non-antipodal vertices. And this difference suggests that we might view the tetrahedron as being more symmetric than the cube. Let's formalize this idea.
+Let's work towards another approach to measuring symmetry. We saw that there is a symmetry taking any vertex of the tetrahedron to any other, and the same is true for a cube. %As such, we may think of the vertices of the tetrahedron (respectively the cube) as being indistinguishable from one another. 
+But now, what if we ask about pairs of vertices. Notice that any two vertices of a tetrahedron can be simultaneously moved to any other two vertices. However, the same is \emph{not} true for the cube: a pair of antipodal vertices can never be simultaneously moved to a pair of non-antipodal vertices. And this difference suggests that we might view the tetrahedron as being more symmetric than the cube. Let's formalize this idea.
 
 \begin{notation}
-For $X$ a set, $X^n$ denotes the set of all $n$-tuples with entries from $X$, and $X^{(n)}$ denotes the subset of $X^n$ consisting of tuples with distinct entries, i.e. \[X^{(n)} = \{(x_1,\ldots,x_n) \in X^n \mid \text{if $i\neq j$, then $x_i \neq x_j$}\}.\]
+For $X$ a set, $X^n$ denotes the set of all $n$-tuples with entries from $X$, and $X^{(n)}$ denotes the subset of $X^n$ consisting of tuples with distinct entries, i.e. \[X^{(n)} = \{(x_1,\ldots,x_n) \in X^n \mid \text{$x_i \neq x_j$ for all $i\neq j$}\}.\]
 \end{notation}
 
 For example, $(1,2,3,2)\notin \mathbb{Z}^{(4)}$ because of the repeated $2$, but $(1,2,3,7)\in \mathbb{Z}^{(4)}$ as there is no repetition in the coordinates. 
 
 \begin{remark}
-If $G$ acts on $X$, then $G$ acts coordinatewise on $X^{(n)}$ via the rule $g\cdot(x_1,\ldots,x_n) = (g\cdot x_1,\ldots,g\cdot x_n)$. In the same way, $G$ also acts on $X^{(n)}$.  
+If $G$ acts on $X$, then $G$ acts coordinatewise on both $X^{n}$ and $X^{(n)}$ via the rule \[g\cdot(x_1,\ldots,x_n) = (g\cdot x_1,\ldots,g\cdot x_n).\] 
 \end{remark}
 
 \begin{definition}
@@ -547,7 +548,7 @@ We say that an action of $G$ on $X$ is \textbf{transitive} if $G$ has only one o
 \begin{example}
 Let's revisit Examples~\ref{exam:Tetra} and \ref{exam:Cube} through the lens of $k$-transitivity. 
 
-The comment above that any two  (distinct) vertices of a tetrahedron can be moved to any other two (distinct) vertices is stating that the action of $\symtetra$ on the vertices of  the tetrahedron is $2$-transitive. In fact, such pairs of vertices can be moved using a rotation, so $\rsymtetra$ also acts $2$-transitively on the vertices. And more is true: $\rsymtetra$ acts $3$-transitively on the vertices of the tetrahedron, and $\symtetra$ acts $4$-transitively on the vertices. 
+The comment above that any two  (distinct) vertices of a tetrahedron can be moved to any other two (distinct) vertices is stating that the action of $\symtetra$ on the vertices of  the tetrahedron is $2$-transitive. In fact, such pairs of vertices can be moved using a rotation, so $\rsymtetra$ also acts $2$-transitively on the vertices. And more is true: $\symtetra$ in fact acts $4$-transitively on the vertices. 
 
 As for the cube, $\symcube$ and $\rsymcube$ act transitively on the vertices, but neither act $2$-transitively. However, $\rsymcube$ does act $4$-transitively on the four diagonals of the cube. 
 \end{example}
@@ -562,8 +563,8 @@ It's a good time to meet some new permutation groups as we continue our investig
 Let's take a look at a particular group of permutations on $\mathbb{R}$. Specifically, we will consider the set of invertible linear functions: \[\AGL_1(\mathbb{R}) = \{ f \in \Sym(\mathbb{R}) \mid \text{$f(x) = mx+b$ for some $m,b\in \mathbb{R}$ with $m\neq 0$}\}.\]
 It can be checked that $\AGL_1(\mathbb{R})$ satisfies the necessary closure axioms to be a permutation group on $\mathbb{R}$. Let's determine how transitive this action is.
 
-Is the action transitive? Yes. For all $r,s\in \mathbb{R}$, the translation $f(x) = x + (s-r)$ is in $\AGL_1(\mathbb{R})$ and $f(r) = s$. 
-What about $2$-transitivity? Let's consider $(r_1,r_2),(s_1,s_2)\in \mathbb{R}^{(2)}$. We need to determine if there exists $f\in \AGL_1(\mathbb{R})$ such that $f\cdot (r_1,r_2) = (s_1,s_2)$, which translates to $f(r_1) = s_1$ and $f(r_2) = s_2$. If we graph the points $(r_1, s_1)$ and $(r_2, s_2)$, remembering that by $r_1 \neq r_2$ and $s_1 \neq s_2$, we have something like the following:
+Is the action transitive? Yes. For all $r,s\in \mathbb{R}$, the translation $f(x) = x + (s-r)$ is in $\AGL_1(\mathbb{R})$ and $f(r) = s$, so $\AGL_1(\mathbb{R})$ has a single orbit on $\mathbb{R}$.
+What about $2$-transitivity? Let's consider $(r_1,r_2),(s_1,s_2)\in \mathbb{R}^{(2)}$. We need to determine if there exists $f\in \AGL_1(\mathbb{R})$ such that $f\cdot (r_1,r_2) = (s_1,s_2)$, which translates to $f(r_1) = s_1$ and $f(r_2) = s_2$. If we graph the points $(r_1, s_1)$ and $(r_2, s_2)$ (remembering that $r_1 \neq r_2$ and $s_1 \neq s_2$ by definition of $\mathbb{R}^{(2)}$), we have something like the following:
 \begin{center}
 \begin{tikzpicture}[thick, scale = .8]
 \footnotesize
@@ -573,14 +574,14 @@ What about $2$-transitivity? Let's consider $(r_1,r_2),(s_1,s_2)\in \mathbb{R}^{
 \draw (.1,1.5)-- (-.1,1.5)  node[anchor = 0] {$s_1$};
 \draw (2,.1)-- (2,-.1)  node[anchor = 90] {$r_2$};
 \draw (.1,2)-- (-.1,2)  node[anchor = 0] {$s_2$};
-
+\draw[dashed, <->] (-1,0.5) -- (3,2.5); 
 \fill (1,1.5) circle (.08);
 \fill (2,2) circle (.08);
 \end{tikzpicture}
 \end{center}
 The function representing the line connecting the two points will take $r_1$ to $s_1$ and $r_2$ to $s_2$, which is what we want, so the action is indeed $2$-transitive.
 
-Could it be $3$-transitive? If it were,  there would have to be some $f\in \AGL_1(\mathbb{R})$ such that $f\cdot (0,1,7) = (0,1,8)$. This would mean that $f(0) = 0$ and $f(1) = 1$. Writing $f(x) = mx+b$, $f(0) = 0$ implies $b=0$, and then $f(1) = 1$ implies $a = 1$. Thus $f$ is the identity function $f(x) = 1$, but then there is no way that $f(7) = 8$. So no, the action is not $3$-transitive.
+Could it be $3$-transitive? If it were,  there would have to be some $f\in \AGL_1(\mathbb{R})$ such that $f\cdot (0,1,2) = (0,1,3)$, meaning that $f(0) = 0$, $f(1) = 1$, and $f(2) = 3$. Writing $f(x) = mx+b$, $f(0) = 0$ implies $b=0$, and then $f(1) = 1$ implies $a = 1$. Thus $f$ is the identity function $f(x) = x$, but then there is no way that $f(2) = 3$. So no, the action is not $3$-transitive.
 \end{example}
 
 
