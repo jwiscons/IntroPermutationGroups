@@ -56,7 +56,7 @@
 \DeclareMathOperator{\AGL}{AGL} 
 \DeclareMathOperator{\PGL}{PGL} 
 \DeclareMathOperator{\PSL}{PSL} 
-\newcommand{\Proj}{\mathbb{P}} 
+\DeclareMathOperator{\Proj}{P} 
 
 \newcommand{\symtetra}{\textsc{Tetra}}
 \newcommand{\rsymtetra}{\textsc{Tetra}^+}
@@ -557,7 +557,9 @@ As for the cube, $\symcube$ and $\rsymcube$ act transitively on the vertices, bu
 If $X = \{1,\ldots,n\}$, then it is fairly straightforward to verify that $\Sym(n)$ acts $n$-transitively on $X$, and it is ever so slightly less-straightforward to check that the action of $\Alt(n)$ is $(n-2)$-transitive but not $(n-1)$-transitive. 
 \end{example}
 
-It's a good time to meet some new permutation groups as we continue our investigation of $k$-transitivity. 
+Although we have seen some examples of \textbf{multiply transitive} actions (i.e.~$k$-transitive actions for $k\ge 2$), it turns our that this is relatively rare. And as one might expect, it becomes even rarer to find $k$-transitive actions as $k$ increases, which is to say that highly symmetric objects are rare. 
+
+Let's meet some new permutation groups as we continue to investigate $k$-transitivity. 
 
 \begin{example}\label{exam.AGL1R}
 Let's take a look at a particular group of permutations on $\mathbb{R}$. Specifically, we will consider the set of invertible (affine) linear functions: \[\AGL_1(\mathbb{R}) = \{ f \in \Sym(\mathbb{R}) \mid \text{$f(x) = mx+b$ for some $m,b\in \mathbb{R}$ with $m\neq 0$}\}.\]
@@ -594,7 +596,7 @@ For $F$ a field, we define \[\AGL_1(F) = \{ f \in \Sym(F) \mid \text{$f(x) = mx+
 Essentially the same proof we gave in Example~\ref{exam.AGL1R} shows that, for any field $F$, $\AGL_1(F)$ acts $2$-transitively on $F$. Moreover, if $|F| \ge 4$, then the action is \emph{not} $3$-transitive. 
 \end{remark*}
 
-The group $\AGL_1(F)$ can be generalized in (at least) a couple of ways. One way is to directly adapt the definition to give functions from $F^n$ to $F^n$ by considering functions $f(x) = mx+b$ where $m$ is an $n\times n$ matrix and $b$ an $n$-vector. 
+The group $\AGL_1(F)$ can be generalized in (at least) a couple of ways. One way is to directly adapt the definition to give functions from the vector space $F^n$ to itself by considering functions $f(x) = mx+b$ where $m$ is an $n\times n$ matrix and $b$ an $n$-vector. 
 
 \begin{definition*}
 For $F$ a field, let $\GL_{n}(F)$ denote all \emph{invertible} $n\times n$ matrices with entries from $F$, and define
@@ -605,6 +607,35 @@ We refer to $\AGL_n(F)$ as the \textbf{affine general linear group} of degree $n
 \begin{remark*}
 We won't explore $\AGL_n(F)$ much here, but it's worth mentioning that---just like $\AGL_1(F)$---each permutation group in this family (for all choices of $n$ and $F$) acts  $2$-transitively on the vector space $F^n$, and provided $|F| \ge 4$, the action is not $3$-transitive.
 \end{remark*}
+
+Let's now take at another way to generalize the construction of $\AGL_1(F)$. This time we will encounter a family of permutation groups that are typically $3$-transitive but not $4$-transitive.
+
+\begin{example}\label{exam.PGL1R}
+In Example~\ref{exam.AGL1R}, we looked at certain functions on the line $\mathbb{R}$; this time we will work with the projective line $\Proj^1(\mathbb{R}) = \mathbb{R} \cup \{\infty\}$. Right now, $\infty$ is just another symbol we are adding to the set $\mathbb{R}$, but we can think of $\Proj^1(\mathbb{R})$ as a circle where $\infty$ connects the positive and negative ``ends'' of the real line.
+\begin{center}
+\begin{tikzpicture}[thick, scale = 0.8]
+\footnotesize
+\begin{scope}
+\draw[<->] (-pi,0) -- (pi,0);
+\draw (0,.1) -- (0,-.1)  node[anchor = 90] {$0$};
+\node at (0,1) {$\mathbb{R}$};
+\end{scope}
+\begin{scope}[shift = {(6,0)}]
+\draw[<->] plot[samples=100,domain=-263:83,smooth]  ({cos(\x)},{sin(\x)+1});
+\draw (0,.1) -- (0,-.1)  node[anchor = 90] {$0$};
+\node[anchor = -90] at (0,2) {$\infty$};
+\fill (0,2) circle (.08);
+\node at (0,1) {$\Proj^1(\mathbb{R})$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+We now define a special collections of permutations of the projective line, namely the so-called \textbf{factional linear transformations}:
+\[\PGL_1(\mathbb{R}) = \left\{ f \in \Sym(\Proj^1(\mathbb{R})) \mid \text{$f(x) = \frac{ax+b}{cx+d}$ for $a,b,c,d\in \mathbb{R}$ with $ad-bc\neq 0$}\right\}.\]
+
+
+
+\end{example}
 
 
 
