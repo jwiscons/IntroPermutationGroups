@@ -636,8 +636,25 @@ We now define a special collections of permutations of the projective line, name
 \[\PGL_2(\mathbb{R}) = \left\{ f \in \Sym(\Proj^1(\mathbb{R})) \mid \text{$f(x) = \frac{ax+b}{cx+d}$ for $a,b,c,d\in \mathbb{R}$ with $ad-bc\neq 0$}\right\}.\]
 In order for a function of the form $f(x) = \frac{ax+b}{cx+d}$ to be fully defined  from $\Proj^1(\mathbb{R})$ to $\Proj^1(\mathbb{R})$, we need to make sense of a couple values: $f(-d/c) = \infty$, $f(\infty) = \frac{a}{c}$ for $c\neq 0$, and $f(\infty) = \infty$ for $c\neq 0$. The first can be thought of via the arithmetic $\frac{r}{0} = \infty$ for each nonzero $r\in \mathbb{R}$; the second and third can be thought of via   $r\cdot\infty+s = r\cdot\infty$, and $\frac{r\cdot\infty}{s\cdot\infty} = \frac{r}{s}$.
 
-Note that $\AGL_1(\mathbb{R}) \subset \PGL_2(\mathbb{R})$ by using $c=0$ and $d = 1$ in the definition above. Moreover, every element of $\AGL_1(\mathbb{R})$ fixes $\infty$, and in fact, $\AGL_1(\mathbb{R})$ is equal to the stabilizer of $\infty$ in $\PGL_2(\mathbb{R})$. Also note that the ``inversion'' function $i(x) = \frac{1}{x} \in \PGL_2(\mathbb{R})$, where $i(0) = \infty$ and $i(\infty) = 0$. If we scale the circle above so that $-1$ and $1$ are the endpoints of the horizontal diameter, then the function $i(x)$ can be viewed as a reflection over that diameter.
+Note that $\AGL_1(\mathbb{R}) \subset \PGL_2(\mathbb{R})$ by using $c=0$ and $d = 1$ in the definition above. Moreover, every element of $\AGL_1(\mathbb{R})$ fixes $\infty$, and in fact, $\AGL_1(\mathbb{R})$ is equal to the stabilizer of $\infty$ in $\PGL_2(\mathbb{R})$. Also note that the ``inversion'' function $i(x) = \frac{1}{x} \in \PGL_2(\mathbb{R})$. If we scale the circle above so that $-1$ and $1$ are the endpoints of the horizontal diameter, then the function $i(x)$ can be viewed as a reflection over that diameter, with $i(0) = \infty$ and $i(\infty) = 0$. 
 
+\begin{center}
+\begin{tikzpicture}[thick, scale = 0.8]
+\footnotesize
+\draw[<->] plot[samples=100,domain=-263:83,smooth]  ({cos(\x)},{sin(\x)+1});
+\draw (0,.1) -- (0,-.1)  node[anchor = 90] {$0$};
+\draw ({-1+.1},1) -- ({-1-.1},1)  node[anchor = 0] {$-1$};
+\draw ({1-.1},1) -- ({1+.1},1)  node[anchor = 180] {$1$};
+\node[anchor = -90] at (0,2) {$\infty$};
+\fill (0,2) circle (.08);
+\draw[blue, <->] (0,0.2) -- (0,1.8);
+\draw[blue, <->] (-0.3,0.3) -- (-0.3,1.7);
+\draw[blue, <->] (0.3,0.3) -- (0.3,1.7);
+\draw[blue, <->] (-0.6,0.4) -- (-0.6,1.6);
+\draw[blue, <->] (0.6,0.4) -- (0.6,1.6);
+\node[blue,fill=white] at (0,1) {$i(x)$};
+\end{tikzpicture}
+\end{center}
 
 
 
