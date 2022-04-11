@@ -723,10 +723,54 @@ It turns out that the answer is yes, but if we only consider finite groups, then
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \subsection{Mathieu groups}
 
-The \href{https://en.wikipedia.org/wiki/Mathieu_group}{Mathieu groups}  are typically denoted $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, $M_{24}$; each is a permutation group acting on, respectively, sets of size $11$, $12$, $22$, $23$, and $24$. These groups can be described many, many different ways. We'll focus on a construction of $M_{12}$ given by Conway and Sloane in \cite{CoSl99} and further concretized, with examples in \href{https://www.gap-system.org}{GAP}, in a \href{https://www.cantorsparadise.com/the-rubiks-icosahedron-and-the-mathieu-group-m12-444ae64d1ac8}{blogpost by Nasmith}.
+The \href{https://en.wikipedia.org/wiki/Mathieu_group}{Mathieu groups},  denoted $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, $M_{24}$, are a special collection of  permutation groups that act on, respectively, sets of size $11$, $12$, $22$, $23$, and $24$. These groups can be described many, many different ways. We'll focus on a construction of $M_{12}$ given by Conway and Sloane in \cite{CoSl99} and further concretized, with examples in \href{https://www.gap-system.org}{GAP}, in a \href{https://www.cantorsparadise.com/the-rubiks-icosahedron-and-the-mathieu-group-m12-444ae64d1ac8}{blogpost by Nasmith}. From that, we will also be able to describe $M_{11}$, but we won't say much about the other three.
 
 \begin{example}[See {\cite[Section~18 of Chapter~11]{CoSl99} and \cite{NaB-Icosa}}]\label{exam.M12}
+We return to the icosahedron.
+\begin{center}
+\begin{tikzpicture}[vertex/.style={circle,draw=black,fill=blue!15,thick,inner sep=1.5pt,minimum size=15pt},line width = 1.2,line join=round,rotate around x=0,rotate around y=-50,rotate around z=20,scale = 1.2]
+\scriptsize
 
+\tikzmath{\a = 1; \z = \a*(1/2 + sqrt(5)/2);}
+
+\node[vertex](A) at (0,\z,\a) {$3$};
+\node[vertex](B) at (0,\z,-\a) {$4$};
+\node[vertex](C) at (0,-\z,\a) {$10$};
+\node[vertex](D) at (0,-\z,-\a) {$9$};
+\node[vertex](E) at (\a,0,\z) {$2$};
+\node[vertex](F) at (\a,0,-\z) {$5$};
+\node[vertex](G) at (-\a,0,\z) {$11$};
+\node[vertex](H) at (-\a,0,-\z) {$8$};
+\node[vertex](I) at (\z,\a,0) {$1$};
+\node[vertex](J) at (\z,-\a,0) {$6$};
+\node[vertex](K) at (-\z,\a,0) {$12$};
+\node[vertex](L) at (-\z,-\a,0)  {$7$};
+
+%\draw[red] (0,0,-3) -- (0,0,3);
+%\draw[blue] (0,-3,0) -- (0,3,0);
+
+\draw[dashed, thick]    
+(B) -- (H) -- (F) 
+(D) -- (L) -- (H) -- (D) 
+(K) -- (L) -- (H) -- (K)
+(K) -- (L) -- (G) -- (K)
+(C) -- (L) (B)--(K) (A)--(K)
+;
+        
+\draw[ultra thick]
+(A) -- (I) -- (B) -- (A) 
+(F) -- (I) -- (B) -- (F) 
+(F) -- (I) -- (J) -- (F)
+(F) -- (D) -- (J) -- (F)
+(C) -- (D) -- (J) -- (C)
+(C) -- (E) -- (J) -- (C)
+(I) -- (E) -- (J) -- (I)
+(I) -- (E) -- (A) -- (I)
+(G) -- (E) -- (A) -- (G)
+(G) -- (E) -- (C) -- (G)
+; 
+\end{tikzpicture}
+\end{center}
 \end{example}
 
 %it turns our that this is relatively rare, and it becomes even rarer to find $k$-transitive actions as $k$ increases, which is to say that highly symmetric objects are rare. 
