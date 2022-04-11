@@ -655,7 +655,7 @@ We now define the so-called \textbf{factional linear transformations} of  the pr
 In order for a function of the form $f(x) = \frac{ax+b}{cx+d}$ to be fully defined  on $\Proj^1(\mathbb{R})$, we need to make sense of a couple values; set 
 \begin{align*}
 f(-d/c) &= \infty\\
-f(\infty) &= \begin{cases} \frac{a}{c} &  \text{if $c\neq 0$}\\ \infty &  \text{if $c= 0$}\end{cases}
+f(\infty) &= \begin{cases} \frac{a}{c} &  \text{if $c\neq 0$}\\ \infty &  \text{if $c= 0$}.\end{cases}
 \end{align*}
 The input $-d/c$ results in the denominator of $f(x)$ being $0$, so $f(-d/c) = \infty$ can be thought of via the arithmetic $r/0 = \infty$ for each nonzero $r\in \mathbb{R}$. One way to make sense of $f(\infty)$ is to think of $\lim_{x\rightarrow \infty} f(x)$; this leads to $f(\infty) = a/c$, which is reasonably interpreted as $\infty$ in the case when $c=0$.
 
@@ -696,8 +696,17 @@ Thus, $g\circ f(r_1,r_2,r_3) = (0,1,\infty)$, so $(r_1,r_2,r_3)\in \Orb_G(0,1,\i
 Might the action be $4$-transitive? If so, there would be an $f\in G$ such that $f (0,1,\infty,2) = (0,1,\infty,3)$. Since $f(\infty) = \infty$, we find that $f\in \AGL_1(\mathbb{R})$, so then (as we saw before) $f(0) = 0$ and $f(1) = 1$ imply that $f$ is the identity function. But then there is no chance that $f(2) = 3$. So the action is not $4$-transitive.
 \end{example}
 
-As with our exploration of $\AGL_1(\mathbb{R})$, our work with $\PGL_2(\mathbb{R})$ used very few specific properties of $\mathbb{R}$, and we again define...
+As with our exploration of $\AGL_1(\mathbb{R})$, our work with $\PGL_2(\mathbb{R})$ used very few specific properties of $\mathbb{R}$, and we are again able to define $\PGL_2(F)$ for $F$ any field.
 
+\begin{definition*}
+For $F$ a field, we define $\Proj^1(F) = F \cup \{\infty\}$ and \[\PGL_2(F) = \left\{ f \in \Sym(\Proj^1(F) \mid \text{$f(x) = \frac{ax+b}{cx+d}$ for $a,b,c,d\in F$ with $ad-bc\neq 0$}\right\},\]
+where
+\[f(-d/c) = \infty \text{ and } f(\infty) = \begin{cases} \frac{a}{c} &  \text{if $c\neq 0$}\\ \infty &  \text{if $c= 0$}.\end{cases}\]
+\end{definition*}
+
+\begin{remark*}
+Our work in Example~\ref{exam.PGL1R} easily generalizes to show that, for any field $F$,  $\PGL_2(F)$ acts $3$-transitively on $\Proj^1(F)$; the action is \emph{not} $4$-transitive provided $|\Proj^1(F)| \ge 5$ (or equivalently, if $|F| \ge 4$). 
+\end{remark*}
 
 
 
