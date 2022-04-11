@@ -33,6 +33,7 @@
 \newtheorem*{remark*}{Remark}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem*{conjecture*}{Conjecture}
+\newtheorem*{question*}{Question}
 \newtheorem*{setup}{Setup}
 \newtheorem*{notation}{Notation}
 \theoremstyle{remark}
@@ -567,7 +568,7 @@ The comment above that any two  (distinct) vertices of a tetrahedron can be move
 As for the cube, $\symcube$ and $\rsymcube$ act transitively on the vertices, but neither act $2$-transitively. However, $\rsymcube$ does act $4$-transitively on the four diagonals of the cube. 
 \end{example}
 
-\begin{example}
+\begin{example}\label{exam.SymAltKTrans}
 If $X = \{1,\ldots,n\}$, then it is fairly straightforward to verify that $\Sym(n)$ acts $n$-transitively on $X$, and it is ever so slightly less-straightforward to check that the action of $\Alt(n)$ is $(n-2)$-transitive but not $(n-1)$-transitive. 
 \end{example}
 
@@ -576,9 +577,7 @@ If $X = \{1,\ldots,n\}$, then it is fairly straightforward to verify that $\Sym(
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \subsection{Affine and projective linear groups}
 
-Although we have seen some (and are about to see more) examples  of \textbf{multiply transitive} actions (i.e.~$k$-transitive actions for $k\ge 2$), it turns our that this is relatively rare, and it becomes even rarer to find $k$-transitive actions as $k$ increases, which is to say that highly symmetric objects are rare. 
-
-%Let's meet some new permutation groups as we continue to investigate $k$-transitivity. 
+Let's meet some new permutation groups as we continue to investigate $k$-transitivity. 
 
 \begin{example}\label{exam.AGL1R}
 Let's take a look at a particular group of permutations on $\mathbb{R}$. Specifically, we will consider the set of invertible (affine) linear functions: \[\AGL_1(\mathbb{R}) = \left\{ f \in \Sym(\mathbb{R}) \mid \text{$f(x) = mx+b$ for some $m,b\in \mathbb{R}$ with $m\neq 0$}\right\}.\]
@@ -709,6 +708,20 @@ Our work in Example~\ref{exam.PGL1R} easily generalizes to show that, for any fi
 \end{remark*}
 
 As you might expect from the notation, $\PGL_2(F)$ can be generalized to obtain the \href{https://en.wikipedia.org/wiki/Projective_linear_group}{projective linear groups} $\PGL_n(F)$. Where $\PGL_2(F)$ acts naturally on the projective line $\Proj^1(F)$ (obtained from $F$ by adding a point at infinity), $\PGL_n(F)$ acts on projective $n$-space $\Proj^n(F)$, which is obtained from $F^n$ by adding an entire $(n-1)$-dimensional space $F^{n-1}$ at infinity. We will not properly define $\PGL_n(F)$ here, but it's worth mentioning  that the action of $\PGL_n(F)$ on $\Proj^n(F)$ is \emph{not} $3$-transitive when $n\ge 3$ (but it is $2$-transitive).
+
+Although we have now seen several examples  of \textbf{multiply transitive} actions (i.e.~$k$-transitive actions for $k\ge 2$), we might be getting the sense that it may be hard to find examples of $k$-transitive actions for large values of $k$. And this is intertwined with the sense that highly symmetric objects are relatively rare. Let's focus the rest of our work in this section with a question. 
+
+\begin{question*}
+Are there examples of $4$-transitive actions other than those naturally associated to $\Sym(n)$ and $\Alt(n)$ (as in Example~\ref{exam.SymAltKTrans})? %Are there other examples of $2$- and $3$- transitive actions other than the ones we've seen?
+\end{question*}
+
+It turns out that the answer is yes, but if we only consider finite groups, then the number of such examples of $4$-transitive actions can be counted on just one hand.
+
+
+
+
+
+%it turns our that this is relatively rare, and it becomes even rarer to find $k$-transitive actions as $k$ increases, which is to say that highly symmetric objects are rare. 
 
 
 
