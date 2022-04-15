@@ -65,6 +65,8 @@
 \newcommand{\rsymcube}{\textsc{Cube}^+}
 \newcommand{\symicosa}{\textsc{Icosa}}
 \newcommand{\rsymicosa}{\textsc{Icosa}^+}
+\newcommand{\twist}{T}
+\newcommand{\twistuntwist}{TU}
 
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\End}{End} 
@@ -728,7 +730,7 @@ The \href{https://en.wikipedia.org/wiki/Mathieu_group}{Mathieu groups},  denoted
 \begin{example}[{\cite[Section~18 of Chapter~11]{CoSl99} and \cite{NaB-Icosa}}]\label{exam.M12}
 We return to the icosahedron. This time, instead of looking at its symmetries, we'll describe a type of game to scramble the vertices via certain allowable moves. The moves we will describe are similar in spirit to those you could perform on a \href{https://en.wikipedia.org/wiki/Dogic}{Dogic} (pictured in Example~\ref{exam:Icosa}), but they cannot actually be done on one.
 
-Holding the icosahedron so that vertex $i$ is pointed up, let $\tau_i$ denote a clockwise ``twist'' of the five vertices connected to vertex $i$; $\tau_i$ does not move any vertices that are not connected to vertex $i$. The twists $\tau_1 = (2,3,4,5,6)$ and $\tau_5 = (1,4,8,9,6)$ are illustrated below using our labeling of the vertices from before. Notice that we are using commas in our cycle notation to avoid confusion when using vertices larger than $9$.
+Holding the icosahedron so that vertex $i$ is pointed up, let $\tau_i$ denote a clockwise ``twist'' of the five vertices connected to vertex $i$; $\tau_i$ does not move any vertices that are not connected to vertex $i$. The twists $\tau_1 = (2,3,4,5,6)$ and $\tau_5 = (1,4,8,9,6)$ are illustrated below using our labeling of the vertices from before. Notice that we are using commas in our cycle notation; this is to avoid confusion when using vertices larger than $9$ later on.
 
 
 \begin{center}
@@ -799,31 +801,38 @@ Holding the icosahedron so that vertex $i$ is pointed up, let $\tau_i$ denote a 
 \end{center}
 
 
-One game you could play is to see all of the ways in which you can scramble the vertices by repeatedly using any of the twelve twists. The collection of all permutations of the vertices arising from this process will be denoted $\langle \tau_1, \tau_2,\ldots,\tau_{12}\rangle$ or more compactly as $\langle \tau_i \mid 1\le i\le 12\rangle$. For example, $\tau_5\tau_1\tau_1\tau_4 \in \langle \tau_i \mid 1\le i\le 12\rangle$, and we can work out that 
+One game we could play is to see all of the ways in which we can scramble the vertices by repeatedly using any of the twelve twists. The collection of all permutations of the vertices arising from this process will be denoted $T$ for the \emph{twist group}. 
+For example, $\tau_5\tau_1\tau_1\tau_4 \in T$, and we can work out that 
 \begin{align*}
 \tau_5\tau_1\tau_1\tau_4 &= (1,4,8,9,6)(2,3,4,5,6)(2,3,4,5,6)(2,3,4,5,6)(1,3,12,8,5)\\
 &= (1,2)(3,6)(4,5,12,8,9)
 \end{align*}
-Can we generate all possible permutations of the vertices using these twists? In other words, is it true that $\langle \tau_i \mid 1\le i\le 12\rangle= \Sym(12)$? The answer is no. However, the twists can generate lots of the permutations (in fact half of them), and it turns out that $\langle \tau_i \mid 1\le i\le 12\rangle= \Alt(12)$.
+In the language of group theory, $T$ is the group \textbf{generated} by the twists; this just means $T$ is the smallest permutation group on the vertices that contains the twists. We write this in symbols as $T = \langle \tau_i \mid 1\le i\le 12\rangle$.
 
-Now let's slightly change the game. This time every time we perform a clockwise twist $\tau_i$ it must be followed immediately by some counter-clockwise ``untwist'' $\tau_j^{-1}$. The set of permutations realized using  this process will be denoted $\langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle$. So what permutations can be generated from our twist-untwist game? We can easily write down some like $\tau_5^{-1}\tau_1 = (1,2,3,4)(5,6,9,8)$ and $\tau_2^{-1}\tau_1\tau_5^{-1}\tau_7\tau_1^{-1}\tau_7 = (3,9,11,8)(5,12,10,6)$, but, for example, how many permutations are in $\langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle$? As mentioned above, the twist group $\langle \tau_i \mid 1\le i\le 12\rangle = \Alt(12)$ contains half of the permutations of the vertices. In contrast, the twist-untwist group $\langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle$ contains less than $1/5000$ of the permutations. It so happens that twist-untwist group is the same as the so-called Mathieu group $M_{12}$, although $M_{12}$ was not initially thought of this way. In symbols, we have  
- \[M_{12} = \langle \tau_j^{-1}\tau_i \mid 1\le i\le 12\rangle.\]
+One question whose answer may not be so clear is: can we generate \emph{all} possible permutations of the vertices using these twists? In other words, is it true that $T= \Sym(12)$? Try to work it out a bit\ldots but the answer is no. However, the twists can generate a lot of the permutations (in fact half of them), and it turns out that $T= \Alt(12)$.
+
+Now let's slightly change the game. This time, every time we perform a clockwise twist $\tau_i$ it must be followed immediately by some counter-clockwise ``untwist'' $\tau_j^{-1}$. The set of permutations realized using this process will be denoted $TU$ for the \emph{twist-untwist} group. The group $TU$ is generated by permutations of the form $\tau_j^{-1}\tau_i$; or symbolically, $TU = \langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle.$ 
+
+What permutations can be generated from our twist-untwist game? We can easily write down some like $\tau_5^{-1}\tau_1 = (1,2,3,4)(5,6,9,8)$ and $\tau_2^{-1}\tau_1\tau_5^{-1}\tau_7\tau_1^{-1}\tau_7 = (3,9,11,8)(5,12,10,6)$, but, for example, how many permutations are in $TU$? As mentioned above, the twist group $T = \Alt(12)$ contains half of the permutations of the vertices. In contrast, $TU$ contains less than $1/5000$ of the permutations. It so happens that twist-untwist group is the same as the so-called Mathieu group $M_{12}$, although $M_{12}$ was not initially thought of this way. Thus,  
+ \[M_{12} = TU = \langle \tau_j^{-1}\tau_i \mid 1\le i\le 12\rangle.\]
 Additionally, the Mathieu group $M_{11}$ is just the stabilizer of the vertex $1$ in $M_{12}$.
 
-Let's investigate the degree of transitivity of the action of $M_{12}$ on the vertices. Is the action transitive? Is every vertex in the orbit of $1$ under the action of $M_{12}$? Notice that with the exception of vertex $7$, every other vertex shares a common neighboring vertex with $1$. For example, $1$ and $9$ have a common neighboring vertex of $5$. Thus, we can move $1$ to $9$ with a series of twists around $5$: $\tau_5^3$ takes $1$ to $9$. Of course, $\tau_5^3$ is \emph{not} an element of $M_{12}$, so let's adjust things. Notice how the twist around the antipodal vertex $11$ does not interact with the twist around $5$, and it can be checked that $(\tau_{11}^{-1}\tau_5)^3$ also takes $1$ to $9$. In this way, we see how to take $1$ to any vertex other than $7$ by an element of $M_{12}$. But it's not hard to also find a permutation taking $1$ to $7$, e.g. $\tau_{10}^{-1}\tau_{12}\tau_1^{-1}\tau_5$. So yes, the action is transitive.
+Let's investigate the degree of transitivity of the action of $M_{12}$ on the vertices. Is the action transitive? Is every vertex in the orbit of $1$ under the action of $M_{12}$? Notice that with the exception of vertex $7$, every other vertex shares a common neighboring vertex with $1$. For example, $1$ and $9$ have a common neighbor of $5$. Thus, we can move $1$ to $9$ with a series of twists around $5$: $\tau_5^3(1) = 9$. Of course, $\tau_5^3$ is \emph{not} an element of $M_{12}$, so let's adjust things. Notice how the twist around the antipodal vertex $11$ does not interact with the twist around $5$, and it can be checked that $(\tau_{11}^{-1}\tau_5)^3$ also takes $1$ to $9$. In a similar way, we see how to take $1$ to any vertex other than $7$ by an element of $M_{12}$. But it's not hard to also find a permutation taking $1$ to $7$, e.g. $\tau_{10}^{-1}\tau_{12}\tau_1^{-1}\tau_5$. So yes, the action of $M_{12}$ is transitive.
 
-Is the action $2$-transitive? Can we simultaneously take vertices $1$ and $2$ to any other pair of distinct vertices $x$ and $y$ under the action of $M_{12}$? Using inverses, this is the same as asking if we can take $x$ and $y$ to $1$ and $2$. We know that we can take $x$ to $1$, so there is some $\alpha \in M_{12}$ such that $\alpha(x,y) = (1,y')$. Thus, if we can find $\beta \in M_{12}$ such that $\beta(1,y') = (1,2)$, we will be done. In other words, we are asking if the stabilizer of $1$ in $M_{12}$ (which is $M_{11}$) can take an arbitrary $y'$ (which is different from $1$) to the vertex $2$. So, can this be done? Can we find a sequence of twist-untwist permutations that do not move $1$, but take an arbitrary $y'\neq 1$ to  $2$? Try! You'll should be successful, and we can then conclude that $M_{12}$ acts $2$-transitively on the the vertices.
+Is the action $2$-transitive? Can we simultaneously take vertices $1$ and $2$ to any other pair of distinct vertices $x$ and $y$ under the action of $M_{12}$? Using inverses, this is the same as asking if we can take $x$ and $y$ to $1$ and $2$. We know that we can take $x$ to $1$, so there is some $\alpha \in M_{12}$ such that $\alpha(x,y) = (1,y')$. Thus, if we can find $\beta \in M_{12}$ such that $\beta(1,y') = (1,2)$, we will be done. In other words, we are asking if the stabilizer of $1$ in $M_{12}$ (which is $M_{11}$) can take an arbitrary $y'$ that is different from $1$ to the vertex $2$. So, can this be done? Can we find a sequence of twist-untwist permutations that do not move $1$, but take an arbitrary $y'\neq 1$ to  $2$? Try! You'll should be successful, and we can then conclude that $M_{12}$ acts $2$-transitively on the the vertices.
 
-In fact, $M_{12}$ acts $5$-transitively on the vertices! Moreover, the stabilizer in $M_{12}$ of five distinct vertices is just the identity permutation, which implies that  $M_{12}$ is \emph{not} $5$-transitive. Also, that fact that $M_{12}$ acts $5$-transitively can be used to quickly see that the stabilizer of the vertex $1$ acts $4$-transitively, so $M_{11}$ is another example of a $4$-transitive group (as is $M_{12}$).
+In fact, $M_{12}$ acts $5$-transitively on the vertices! Moreover, the stabilizer in $M_{12}$ of five distinct vertices is just the identity permutation, which implies that  $M_{12}$ is \emph{not} $6$-transitive. Also, that fact that $M_{12}$ acts $5$-transitively can be used to quickly see that the stabilizer of the vertex $1$ acts $4$-transitively, so $M_{11}$ is an example of a $4$-transitive group (as is $M_{12}$).
 \end{example}
 
-We are now in a position to give the answer to our earlier question: are there examples of $4$-transitive actions other than those naturally associated to $\Sym(n)$ and $\Alt(n)$ (as in Example~\ref{exam.SymAltKTrans})? Yes! But more importantly, in the case of finite permutation groups we know them all.
+We are now in a position to answer  our earlier question: are there examples of $4$-transitive actions other than those naturally associated to $\Sym(n)$ and $\Alt(n)$? Yes! But more importantly, in the case of finite permutation groups, we know them all.
 
 \begin{theorem*}[see for example {\cite[Theorem~4.11]{CaP99}}]
 The only finite permutation groups with a $4$-transitive action are the symmetric groups, the alternating groups, and the Mathieu groups $M_{11}$, $M_{12}$, $M_{23}$, and $M_{24}$. Consequently, the only finite permutation groups with a $6$-transitive action are the symmetric and alternating groups.
 \end{theorem*}
 
-The proof of this theorem is quite deep, utilizing the \href{https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups}{classification of the so-called finite ``simple'' groups}. A further consequence of this classification project is that all finite permutation groups with a $2$-transitive action are known. This list is quite a bit longer than for $4$-transitive actions, including, for example, the affine and projective groups $\AGL_1(F)$ and $\PGL_2(F)$ (for $F$ a finite field) as well as their generalizations to $\AGL_n(F)$ and $\PGL_n(F)$. 
+The proof of this theorem is quite deep, utilizing the \href{https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups}{classification of the finite ``simple'' groups}. A further consequence of this classification project is that all finite permutation groups with a $2$-transitive action are known. This list is quite a bit longer than for $4$-transitive actions, including, for example, the affine and projective groups $\AGL_1(F)$ and $\PGL_2(F)$ (for $F$ a finite field) as well as their generalizations to $\AGL_n(F)$ and $\PGL_n(F)$. 
+
+
 
 
 
