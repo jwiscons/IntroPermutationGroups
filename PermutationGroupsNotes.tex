@@ -558,13 +558,13 @@ The main reason for looking at the action of $G$ on $X^{n}$ or $X^{(n)}$ is to s
 \end{remark*}
 
 \begin{definition*}
-We say that an action of $G$ on $X$ is \textbf{transitive} if $G$ has only one orbit on $X$. More generally, we say the action is \textbf{$k$-transitive} if $G$ has only one orbit on $X^{(k)}$ (with respect to the coordinatewise action).
+We say that an action of $G$ on $X$ is \textbf{transitive} if $G$ has only one orbit on $X$. More generally, we say the action is \textbf{$k$-transitive} if $G$ has only one orbit on $X^{(k)}$ (with respect to the coordinatewise action). Thus, the action is $k$-transitive if for all $(x_1,\ldots,x_k),(y_1,\ldots,y_k)\in X^{(k)}$ there exists some $g\in G$ such that $g\cdot x_i = y_i$ for all $1\le i\le k$.
 \end{definition*}
 
 \begin{example}
 Let's revisit Examples~\ref{exam:Tetra} and \ref{exam:Cube} through the lens of $k$-transitivity. 
 
-The comment above that any two  (distinct) vertices of a tetrahedron can be moved to any other two (distinct) vertices is stating that the action of $\symtetra$ on the vertices of  the tetrahedron is $2$-transitive. In fact, such pairs of vertices can be moved using a rotation, so $\rsymtetra$ also acts $2$-transitively on the vertices. And more is true: $\symtetra$ infact acts $4$-transitively on the vertices. 
+The comment above that any two  (distinct) vertices of a tetrahedron can be moved to any other two (distinct) vertices is stating that the action of $\symtetra$ on the vertices of  the tetrahedron is $2$-transitive. In fact, such pairs of vertices can be moved using a rotation, so $\rsymtetra$ also acts $2$-transitively on the vertices. And more is true: $\symtetra$ in fact acts $4$-transitively on the vertices. 
 
 As for the cube, $\symcube$ and $\rsymcube$ act transitively on the vertices, but neither act $2$-transitively. However, $\rsymcube$ does act $4$-transitively on the four diagonals of the cube. 
 \end{example}
@@ -606,7 +606,7 @@ The function representing the line connecting the two points will take $r_1$ to 
 Could it be $3$-transitive? If it were,  there would have to be some $f\in \AGL_1(\mathbb{R})$ such that $f (0,1,2) = (0,1,3)$, meaning that $f(0) = 0$, $f(1) = 1$, and $f(2) = 3$. Writing $f(x) = mx+b$, $f(0) = 0$ implies $b=0$, and then $f(1) = 1$ implies $a = 1$. Thus $f$ is the identity function $f(x) = x$, but then there is no way that $f(2) = 3$. So no, the action is not $3$-transitive.
 \end{example}
 
-In Example~\ref{exam.AGL1R}, we considered the group of invertible linear functions from $\mathbb{R}$ to $\mathbb{R}$, but we used very little specific knowledge of $\mathbb{R}$. For example, we would have reached the same conclusion for invertible linear functions from $\mathbb{Q}$ to $\mathbb{Q}$. As such, we will define $\AGL_1(F)$ where $F$ is any \href{https://en.wikipedia.org/wiki/Field_(mathematics)}{field}; roughly, a \textbf{field} is a mathematical structure with ``well-behaved'' notions of addition and multiplication, as well as additive and multiplicative inverses. Examples of fields include $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$, but not $\mathbb{Z}$ because of the lack of multiplicative inverses for most elements. There are also  examples of finite fields like $\mathbb{Z}_p$; here $\mathbb{Z}_p$ represents (congruence classes of) the integers with arithmetic performed modulo a prime number $p$.
+In Example~\ref{exam.AGL1R}, we considered the group of invertible linear functions from $\mathbb{R}$ to $\mathbb{R}$, but we used very little specific knowledge of $\mathbb{R}$. For example, we would have reached the same conclusion for invertible linear functions from $\mathbb{Q}$ to $\mathbb{Q}$. As such, we will define $\AGL_1(F)$ where $F$ is any \href{https://en.wikipedia.org/wiki/Field_(mathematics)}{field}; roughly, a \textbf{field} is a mathematical structure with ``well-behaved'' notions of addition and multiplication as well as additive and multiplicative inverses. Examples of fields include $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$, but not $\mathbb{Z}$ because of the lack of multiplicative inverses for most elements. There are also  examples of finite fields like $\mathbb{Z}_p$; here $\mathbb{Z}_p$ represents (congruence classes of) the integers with arithmetic performed modulo a prime number $p$.
 
 \begin{definition*}
 For $F$ a field, we define \[\AGL_1(F) = \left\{ f \in \Sym(F) \mid \text{$f(x) = mx+b$ for some $m,b\in F$ with $m\neq 0$}\right\}.\]
@@ -616,7 +616,7 @@ For $F$ a field, we define \[\AGL_1(F) = \left\{ f \in \Sym(F) \mid \text{$f(x) 
 Essentially the same proof we gave in Example~\ref{exam.AGL1R} shows that, for any field $F$, $\AGL_1(F)$ acts $2$-transitively on $F$. Moreover, if $|F| \ge 4$, then the action is \emph{not} $3$-transitive. 
 \end{remark*}
 
-The group $\AGL_1(F)$ can be generalized in (at least) a couple of ways. One way is to directly adapt the definition to give functions from the vector space $F^n$ to itself by considering functions $f(x) = mx+b$ where $m$ is an $n\times n$ matrix and $b$ an $n$-vector. 
+The group $\AGL_1(F)$ can be generalized in at least a couple of ways. One way is to directly adapt the definition to give functions from the vector space $F^n$ to itself by considering functions $f(x) = mx+b$ where $m$ is an $n\times n$ matrix and $b$ an $n$-vector. 
 
 \begin{definition*}
 For $F$ a field, let $\GL_{n}(F)$ denote the set of all \emph{invertible} $n\times n$ matrices with entries from $F$, and define
@@ -625,7 +625,7 @@ We refer to $\AGL_n(F)$ as the \textbf{affine general linear group} of degree $n
 \end{definition*}
 
 \begin{remark*}
-We won't explore $\AGL_n(F)$ much here, but it's worth mentioning that---just like $\AGL_1(F)$---each permutation group in this family (for all choices of $n$ and $F$) acts  $2$-transitively on the vector space $F^n$, and provided $|F| \ge 4$, the action is not $3$-transitive.
+We won't explore $\AGL_n(F)$  here, but it's worth mentioning that---just like $\AGL_1(F)$---each permutation group in this family (for all choices of $n$ and $F$) acts  $2$-transitively on the vector space $F^n$, and provided $|F| \ge 4$, the action is not $3$-transitive.
 \end{remark*}
 
 Let's now take a look at another way to generalize the construction of $\AGL_1(F)$. This time we will encounter a family of permutation groups that are typically $3$-transitive but not $4$-transitive.
@@ -659,7 +659,7 @@ f(\infty) &= \begin{cases} \frac{a}{c} &  \text{if $c\neq 0$}\\ \infty &  \text{
 \end{align*}
 The input $-d/c$ results in the denominator of $f(x)$ being $0$, so $f(-d/c) = \infty$ can be thought of via the arithmetic $r/0 = \infty$ for each nonzero $r\in \mathbb{R}$. One way to make sense of $f(\infty)$ is to think of $\lim_{x\rightarrow \infty} f(x)$; this leads to $f(\infty) = a/c$, which is reasonably interpreted as $\infty$ in the case when $c=0$.
 
-Note that $\AGL_1(\mathbb{R}) \subset \PGL_2(\mathbb{R})$ by using $c=0$ and $d = 1$ in the definition above. Moreover, every element of $\AGL_1(\mathbb{R})$ fixes $\infty$, and in fact, $\AGL_1(\mathbb{R})$ is equal to the stabilizer of $\infty$ in $\PGL_2(\mathbb{R})$. Also note that the ``inversion'' function $i(x) = \frac{1}{x} \in \PGL_2(\mathbb{R})$. If we scale the circle above so that $-1$ and $1$ are the endpoints of the horizontal diameter, then the function $i(x)$ can be viewed as a reflection over that diameter (with $i(0) = \infty$ and $i(\infty) = 0$). 
+Note that $\AGL_1(\mathbb{R}) \subset \PGL_2(\mathbb{R})$ by using $c=0$ and $d = 1$ in the definition above. Moreover, every element of $\AGL_1(\mathbb{R})$ fixes $\infty$, and in fact, $\AGL_1(\mathbb{R})$ is \emph{equal} to the stabilizer of $\infty$ in $\PGL_2(\mathbb{R})$. Also note that the ``inversion'' function $i(x) = \frac{1}{x}$ is in $\PGL_2(\mathbb{R})$. If we scale the circle above so that $-1$ and $1$ are the endpoints of the horizontal diameter, then the function $i(x)$ can be viewed as a reflection over that diameter (with $i(0) = \infty$ and $i(\infty) = 0$). 
 
 \begin{center}
 \begin{tikzpicture}[thick, scale = 0.8]
@@ -683,17 +683,17 @@ We now work to show that $\PGL_2(\mathbb{R})$ acts $3$-transitively on $\Proj^1(
 
 Let's first prove that the action is transitive.  We'll do this by showing that $r\in \Orb_G(\infty)$ for every $r\in X$ (implying that $G$ has only on orbit on $X$). If $r=\infty$, then $r\in \Orb_G(\infty)$ since $\infty = \id(\infty)$ (where $\id(x) = x$). Suppose now that $r\neq\infty$; then $r\in \mathbb{R}$. Since $\AGL_1(\mathbb{R})$ is transitive on $\mathbb{R}$, there exists an $f\in \AGL_1(\mathbb{R}) \subset G$ such that $f(r) = 0$. And then, with $i(x)$ the inversion function defined above, we find that $i\circ f(r) = i(0) = \infty$, which shows that $r\in \Orb_G(\infty)$.
 
-To show $G$ acts $3$-transitively, we will show that $(r_1,r_2,r_3)\in \Orb_G(0,1,\infty)$ for every $(r_1,r_2,r_3)\in X^{(3)}$. Since we have shown $G$ acts transitively on $X$, there exists $f\in G$ such that $f(r_3) = \infty$; thus $f(r_1,r_2,r_3) = (s_1,s_1,\infty)$ for some $s_1,s_2\in X$.  Because $r_1,r_2,r_3$ are all distinct and $f$ is a one-to-one, $s_1,s_2,\infty$ are all distinct. In particular, $s_1,s_2 \in \mathbb{R}^{(2)}$, so by $2$-transitivity of $\AGL_1(\mathbb{R})$, there exists $g\in \AGL_1(\mathbb{R})$ such that $g(s_1,s_2) = (0,1)$. As mentioned before, the elements of $\AGL_1(\mathbb{R})$ fix $\infty$, so $g(\infty) = \infty$. Pictorially,
+To show $G$ acts $3$-transitively, we will show that $(r_1,r_2,r_3)\in \Orb_G(0,1,\infty)$ for every $(r_1,r_2,r_3)\in X^{(3)}$. Since we have shown $G$ acts transitively on $X$, there exists $g\in G$ such that $g(r_3) = \infty$; thus $g(r_1,r_2,r_3) = (s_1,s_1,\infty)$ for some $s_1,s_2\in X$.  Because $r_1,r_2,r_3$ are all distinct and $g$ is a one-to-one, $s_1,s_2,\infty$ are all distinct. In particular, $s_1,s_2 \in \mathbb{R}^{(2)}$, so by $2$-transitivity of $\AGL_1(\mathbb{R})$, there exists $f\in \AGL_1(\mathbb{R})$ such that $f(s_1,s_2) = (0,1)$. As mentioned before, the elements of $\AGL_1(\mathbb{R})$ fix $\infty$, so $f(\infty) = \infty$. Pictorially,
 \[\begin{array}{ccccc}
 \footnotesize
-    & f           &        & g           & \\
+    & g           &        & f           & \\
 r_1 & \rightarrow & s_1   & \rightarrow & 0\\
 r_2 & \rightarrow & s_2   & \rightarrow & 1\\
 r_3 & \rightarrow & \infty & \rightarrow & \infty\\
 \end{array}\]
-Thus, $g\circ f(r_1,r_2,r_3) = (0,1,\infty)$, so $(r_1,r_2,r_3)\in \Orb_G(0,1,\infty)$ as desired.
+Thus, $f\circ g(r_1,r_2,r_3) = (0,1,\infty)$, so $(r_1,r_2,r_3)\in \Orb_G(0,1,\infty)$ as desired.
 
-Might the action be $4$-transitive? If so, there would be an $f\in G$ such that $f (0,1,\infty,2) = (0,1,\infty,3)$. Since $f(\infty) = \infty$, we find that $f\in \AGL_1(\mathbb{R})$, so then (as we saw before) $f(0) = 0$ and $f(1) = 1$ imply that $f$ is the identity function. But then there is no chance that $f(2) = 3$. So the action is not $4$-transitive.
+Might the action be $4$-transitive? If so, there would be an $g\in G$ such that $g (0,1,\infty,2) = (0,1,\infty,3)$. Since $g(\infty) = \infty$, we find that $g\in \AGL_1(\mathbb{R})$, but then (as we saw in Example~\ref{exam.AGL1R}), $g(0) = 0$ and $g(1) = 1$ imply that $g$ is the identity function. Thus, there is no chance that $g(2) = 3$. So the action is not $4$-transitive.
 \end{example}
 
 As with our exploration of $\AGL_1(\mathbb{R})$, our work with $\PGL_2(\mathbb{R})$ used very few specific properties of $\mathbb{R}$, and we are again able to define $\PGL_2(F)$ for $F$ any field.
@@ -710,25 +710,25 @@ Our work in Example~\ref{exam.PGL1R} easily generalizes to show that, for any fi
 
 As you might expect from the notation, $\PGL_2(F)$ can be generalized to obtain the \href{https://en.wikipedia.org/wiki/Projective_linear_group}{projective linear groups} $\PGL_n(F)$. Where $\PGL_2(F)$ acts naturally on the projective line $\Proj^1(F)$ (obtained from $F$ by adding a point at infinity), $\PGL_n(F)$ acts on projective $n$-space $\Proj^n(F)$, which is obtained from $F^n$ by adding an entire $(n-1)$-dimensional space $F^{n-1}$ at infinity. We will not properly define $\PGL_n(F)$ here, but it's worth mentioning  that the action of $\PGL_n(F)$ on $\Proj^n(F)$ is \emph{not} $3$-transitive when $n\ge 3$ (but it is $2$-transitive).
 
-Although we have now seen several examples  of \textbf{multiply transitive} actions (i.e.~$k$-transitive actions for $k\ge 2$), we might be getting the sense that it may be hard to find examples of $k$-transitive actions for large values of $k$. And this is intertwined with the sense that highly symmetric objects are relatively rare. Let's focus the rest of our work in this section with a question. 
+Although we have now seen several examples  of \textbf{multiply transitive} actions (i.e.~$k$-transitive actions for $k\ge 2$), we might be getting the sense that it may be hard to find examples of $k$-transitive actions for larger values of $k$. And this is intertwined with the sense that highly symmetric objects are relatively rare. Let's focus the rest of our work in this section with a question. 
 
 \begin{question*}
 Are there examples of $4$-transitive actions other than those naturally associated to $\Sym(n)$ and $\Alt(n)$ (as in Example~\ref{exam.SymAltKTrans})? %Are there other examples of $2$- and $3$- transitive actions other than the ones we've seen?
 \end{question*}
 
-It turns out that the answer is yes, but if we only consider finite groups, then the number of such examples of $4$-transitive actions can be counted on just one hand.
+It turns out that the answer is yes, but if we only consider finite groups, then the number of such examples of $4$-transitive actions can be counted on just one hand!
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % Subsection
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \subsection{Mathieu groups}
 
-The \href{https://en.wikipedia.org/wiki/Mathieu_group}{Mathieu groups},  denoted $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, $M_{24}$, are a special collection of  permutation groups that act on, respectively, sets of size $11$, $12$, $22$, $23$, and $24$. These groups can be described many, many different ways. We'll focus on a construction of $M_{12}$ given by Conway and Sloane in \cite{CoSl99} and further concretized, with examples in \href{https://www.gap-system.org}{GAP}, in a \href{https://www.cantorsparadise.com/the-rubiks-icosahedron-and-the-mathieu-group-m12-444ae64d1ac8}{blogpost by Nasmith}. From that, we will also be able to describe $M_{11}$, but we won't say much about the other three.
+The \href{https://en.wikipedia.org/wiki/Mathieu_group}{Mathieu groups},  denoted $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, and $M_{24}$, are a special collection of  permutation groups that act on, respectively, sets of size $11$, $12$, $22$, $23$, and $24$. These groups can be described many different ways. We'll focus on a construction of $M_{12}$ given by Conway and Sloane \cite{CoSl99} and further concretized by examples using \href{https://www.gap-system.org}{GAP} in a \href{https://www.cantorsparadise.com/the-rubiks-icosahedron-and-the-mathieu-group-m12-444ae64d1ac8}{blogpost by Nasmith}. From that, we will also be able to describe $M_{11}$, but we won't say much about the other three.
 
-\begin{example}[See {\cite[Section~18 of Chapter~11]{CoSl99} and \cite{NaB-Icosa}}]\label{exam.M12}
-We return to the icosahedron. This time, instead of looking at its symmetries, we'll describe a type of game to scramble the vertices via certain allowable moves. The moves we will describe are similar in spirit to those you could perform on a \href{https://en.wikipedia.org/wiki/Dogic}{Dogic} (pictured in Example~\ref{exam.Icosa}), but they cannot actually be done on one.
+\begin{example}[{\cite[Section~18 of Chapter~11]{CoSl99} and \cite{NaB-Icosa}}]\label{exam.M12}
+We return to the icosahedron. This time, instead of looking at its symmetries, we'll describe a type of game to scramble the vertices via certain allowable moves. The moves we will describe are similar in spirit to those you could perform on a \href{https://en.wikipedia.org/wiki/Dogic}{Dogic} (pictured in Example~\ref{exam:Icosa}), but they cannot actually be done on one.
 
-Holding the icosahedron so that vertex $i$ is pointed up, let $\tau_i$ denote a clockwise ``twist'' of the five vertices connected to vertex $i$; $\tau_i$ does not move any vertices that are not connected to vertex $i$. The twists $\tau_1 = (2,3,4,5,6)$ and $\tau_5 = (1,4,8,9,6)$ are illustrated below using our labeling of the vertices from before. (We're using commas in our cycle notation to avoid confusion when using vertices larger than $9$.)
+Holding the icosahedron so that vertex $i$ is pointed up, let $\tau_i$ denote a clockwise ``twist'' of the five vertices connected to vertex $i$; $\tau_i$ does not move any vertices that are not connected to vertex $i$. The twists $\tau_1 = (2,3,4,5,6)$ and $\tau_5 = (1,4,8,9,6)$ are illustrated below using our labeling of the vertices from before. Notice that we are using commas in our cycle notation to avoid confusion when using vertices larger than $9$.
 
 
 \begin{center}
@@ -806,7 +806,7 @@ One game you could play is to see all of the ways in which you can scramble the 
 \end{align*}
 Can we generate all possible permutations of the vertices using these twists? In other words, is it true that $\langle \tau_i \mid 1\le i\le 12\rangle= \Sym(12)$? The answer is no. However, the twists can generate lots of the permutations (in fact half of them), and it turns out that $\langle \tau_i \mid 1\le i\le 12\rangle= \Alt(12)$.
 
-Now let's slightly change the game. This time every time we perform a (clockwise) twist $\tau_i$ it must be followed immediately by some counter-clockwise twist $\tau_j^{-1}$. The set of permutations realized using from this process will be denoted $\langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle$. So what permutations can be generated from our twist-untwist game? We can easily write down some like $\tau_5^{-1}\tau_1 = (1,2,3,4)(5,6,9,8)$ and $\tau_2^{-1}\tau_1\tau_5^{-1}\tau_7\tau_1^{-1}\tau_7 = (3,9,11,8)(5,12,10,6)$, but, for example, how many are there? As mentioned above, the twist group $\langle \tau_i \mid 1\le i\le 12\rangle$ contains half of the permutations of the vertices. In contrast, the twist-untwist group $\langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle$ contains less than $1/5000$ of the permutations. It so happens that twist-untwist group is the same as the so-called Mathieu group $M_{12}$, although $M_{12}$ was not initially thought of this way. In symbols, we have  
+Now let's slightly change the game. This time every time we perform a clockwise twist $\tau_i$ it must be followed immediately by some counter-clockwise ``untwist'' $\tau_j^{-1}$. The set of permutations realized using  this process will be denoted $\langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle$. So what permutations can be generated from our twist-untwist game? We can easily write down some like $\tau_5^{-1}\tau_1 = (1,2,3,4)(5,6,9,8)$ and $\tau_2^{-1}\tau_1\tau_5^{-1}\tau_7\tau_1^{-1}\tau_7 = (3,9,11,8)(5,12,10,6)$, but, for example, how many permutations are in $\langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle$? As mentioned above, the twist group $\langle \tau_i \mid 1\le i\le 12\rangle = \Alt(12)$ contains half of the permutations of the vertices. In contrast, the twist-untwist group $\langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle$ contains less than $1/5000$ of the permutations. It so happens that twist-untwist group is the same as the so-called Mathieu group $M_{12}$, although $M_{12}$ was not initially thought of this way. In symbols, we have  
  \[M_{12} = \langle \tau_j^{-1}\tau_i \mid 1\le i\le 12\rangle.\]
 Additionally, the Mathieu group $M_{11}$ is just the stabilizer of the vertex $1$ in $M_{12}$.
 
