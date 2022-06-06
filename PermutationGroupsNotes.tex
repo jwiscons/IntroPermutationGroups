@@ -851,7 +851,7 @@ The definition can be challenging to wrap one's head around at first, and we'll 
 Let $G$ be a permutation group acting on $X$.
 \begin{enumerate}
 \item Tuples $\bar{x},\bar{y} \in X^k$ are said to be \textbf{$r$-equivalent}, denoted $\bar{x}\sim_r\bar{y}$, if {every} $r$ elements from $\bar{x}$ are in the same orbit as the \textit{corresponding} $r$ elements from  $\bar{y}$.
-\item The \textbf{relational complexity} of the action, denoted $\rc(G,X)$, is the \emph{smallest} $r$ such that $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$ of  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^k$.
+\item The \textbf{relational complexity} of the action, denoted $\rc(G,X)$, is the \emph{smallest} $r$ such that $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^k$.
 \end{enumerate}
 \end{definition*}
 
@@ -908,6 +908,18 @@ To establish a lower bound on the relational complexity (as we desire to do here
 As $|G| \ge 2$, we may choose $g\in G$ such that $g$ is not the identity. Then there exists some $a\in X$ such that $g\cdot a \neq a$. Set $b=g\cdot a$, and consider the tuples $(a,a)$ and $(a,b)$. These are $1$-equivalent because the identity maps the first coordinate of $(a,a)$ to the first coordinate of $(a,b)$, and $g$ does the same for the second coordinates. We now explain why $(a,a)\nsim_2(a,b)$. Suppose to the contrary that $(a,a)\sim_2(a,b)$; then $h\cdot (a,a)=(a,b)$ for some $h\in G$. This means that $h\cdot a= a$ and $h\cdot a= b$. Since $h\cdot a$ must have a single value and $a\neq b$, we arrive at a contradiction. Thus, $(a,a)\nsim_2(a,b)$.
 \end{proof}
 
+One (likely unclear) consequence of the previous lemma it that when analyzing the relational complexity of an action, we can focus on tuples with \emph{distinct} entries (i.e.~tuples from $X^{(k)}$), just like we did when analyzing $k$-transitivity. Let's formalize this comment.
+
+\begin{lemma*}\label{lem.RCRepeatedEntries}
+Let $G$ be a permutation group acting on $X$ with $|G| \ge 2$. If $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^{(k)}$, then  $\rc(G,X)\ge r$.
+\end{lemma*}
+\begin{proof}
+
+
+To show $\rc(G,X)\ge r$, we must show $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^k$. Let $\bar{x},\bar{y} \in X^k$, and assume that $\bar{x}\sim_r\bar{y}$. By Lemma~\ref{lem.RCAtLeast2}, we know $\rc(G,X)\ge 2$, so if $r$ is $1$ or $2$, the conclusion holds immediately. Thus, we may assume $r\ge 3$, although all we really will need is that $r\ge 2$.
+
+Suppose that $\bar{x}$ has repeated entries, say $x_i = x_j$. Then we may use that $\bar{x}\sim_r\bar{y}$ with $r\ge 2$ to see that there is some $g\in G$ such that $g\cdot x_i = y_i$ and $g\cdot x_j = y_j$, so $y_i = y_j$ as well. Thus, repeated entries in $\bar{x}$ correspond to repeated entries in $\bar{y}$ and vice versa. Removing all repeated entries from $\bar{x}$ and the corresponding repeated entries from $\bar{y}$ yields new tuples $\bar{x}',\bar{y}' \in X^{(\ell)}$ for some $\ell\le k$ (where $k-\ell$ counts the number of entries removed). Note that we still have $\bar{x}'\sim_r\bar{y}'$, so we can apply the assumption of the lemma to see that $\bar{x}'\sim_\ell \bar{y}'$. Thus, there exists some $h\in G$ such that $h\cdot \bar{x}' = \bar{y}'$. Adding back in the repeated entries, we have  $h\cdot \bar{x} = \bar{y}$, so $\bar{x}\sim_k\bar{y}$, as desired.
+\end{proof}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
@@ -918,6 +930,8 @@ As $|G| \ge 2$, we may choose $g\in G$ such that $g$ is not the identity. Then t
 
 \begin{example}\label{exam.SymAltRC}
 Set $X = \{1,\ldots,n\}$, and let's work out $\rc(\Sym(n),X)$ and $\rc(\Alt(n),X)$. 
+
+In the first case, we find that $\rc(\Sym(n),X)=2$. To see this, remember that we already know that $\rc(\Sym(n),X)\ge 2$
 \end{example}
 
 
