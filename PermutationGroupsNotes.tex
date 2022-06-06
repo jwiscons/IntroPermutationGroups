@@ -844,15 +844,14 @@ The proof of this theorem is quite deep, utilizing the \href{https://en.wikipedi
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \section{Relational complexity}\label{S:rcomp}
 
-This section will introduce the notion of \emph{relational complexity} for a permutation group. This is a relatively new topic of study that has its roots in an area of mathematical logic known as model theory. Quite of bit of research has occurred lately around relational complexity, and there are many questions that remain.
-
-The definition might be challenging to wrap one's head around at first, but we will spend some time unpacking what it means. However, the (very important) question of why one would consider this definition in the first place is best answered in model-theoretic terms, but we will simply refer out for that: see for example~\cite[Section~2]{ChG00} or \cite[Section~2.2]{WiJ16b}. Sorry!
+Let's now take a look at a relatively new topic about permutation groups, known as \emph{relational complexity}, which has its roots in an area of mathematical logic known as \href{https://en.wikipedia.org/wiki/Model_theory}{model theory}. Although quite of bit of research has occurred recently around relational complexity, there are many questions that remain.
+The definition can be challenging to wrap one's head around at first, and we'll spend some time unpacking what it means. However, the (very important) question of why one would consider this definition in the first place is best answered in model-theoretic terms, but we will simply refer out for that: see for example~\cite[Section~2]{ChG00} or \cite[Section~2.2]{WiJ16b}. Sorry!
 
 \begin{definition*}
 Let $G$ be a permutation group acting on $X$.
 \begin{enumerate}
 \item Tuples $\bar{x},\bar{y} \in X^k$ are said to be \textbf{$r$-equivalent}, denoted $\bar{x}\sim_r\bar{y}$, if {every} $r$ elements from $\bar{x}$ are in the same orbit as the \textit{corresponding} $r$ elements from  $\bar{y}$.
-\item The \textbf{relational complexity} of the action, denoted $\rc(G,X)$, is the smallest $r$ such that $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$ of  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^k$.
+\item The \textbf{relational complexity} of the action, denoted $\rc(G,X)$, is the \emph{smallest} $r$ such that $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$ of  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^k$.
 \end{enumerate}
 \end{definition*}
 
@@ -885,7 +884,7 @@ Let's first just think about the difference between $2$- and $3$-equivalence. Su
 \end{scope}
 \end{tikzpicture}
 \end{center}
-However, if the tuples are $3$-equivalent, then there would exist a single $g\in G$ that simultaneously maps all three elements of $\bar{x}$ to the corresponding elements of $\bar{y}$, i.e.  $g\cdot(x_1,x_2,x_3) = (y_1,y_2,y_3)$. 
+However, if the tuples are $3$-equivalent, then there  exists a single $g\in G$ that simultaneously maps all three elements of $\bar{x}$ to the corresponding elements of $\bar{y}$, i.e.  $g\cdot(x_1,x_2,x_3) = (y_1,y_2,y_3)$. 
 \begin{center}
 \begin{tikzpicture}[line width = 1.2]
 \footnotesize
@@ -899,6 +898,18 @@ However, if the tuples are $3$-equivalent, then there would exist a single $g\in
 \end{center}
 
 Notice, in  particular, how $\bar{x}\sim_3\bar{y}$ implies $\bar{x}\sim_2\bar{y}$ since we could use the same $g$ for each of $g_1,g_2,g_3$, but $\bar{x}\sim_2\bar{y}$ does not necessarily imply $\bar{x}\sim_3\bar{y}$.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% Subsection
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\subsection{First examples}
+
+
+
+
+
+
+
 
 \vfill
 
