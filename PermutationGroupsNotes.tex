@@ -897,7 +897,7 @@ However, if the tuples are $3$-equivalent, then there  exists a single $g\in G$ 
 \end{tikzpicture}
 \end{center}
 
-Notice, in  particular, how $\bar{x}\sim_3\bar{y}$ implies $\bar{x}\sim_2\bar{y}$ since we could use the same $g$ for each of $g_1,g_2,g_3$, but $\bar{x}\sim_2\bar{y}$ does not necessarily imply $\bar{x}\sim_3\bar{y}$.
+Notice, in particular, how $\bar{x}\sim_3\bar{y}$ implies $\bar{x}\sim_2\bar{y}$ since we could use the same $g$ for each of $g_1,g_2,g_3$, but $\bar{x}\sim_2\bar{y}$ does not necessarily imply $\bar{x}\sim_3\bar{y}$.
 
 \begin{lemma*}\label{lem.RCAtLeast2}
 Let $G$ be a permutation group acting on $X$. If $|G| \ge 2$, then $\rc(G,X)\ge 2$. 
@@ -914,9 +914,7 @@ One (likely unclear) consequence of the previous lemma it that when analyzing th
 Let $G$ be a permutation group acting on $X$ with $|G| \ge 2$. If $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^{(k)}$, then  $\rc(G,X)\ge r$.
 \end{lemma*}
 \begin{proof}
-
-
-To show $\rc(G,X)\ge r$, we must show $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^k$. Let $\bar{x},\bar{y} \in X^k$, and assume that $\bar{x}\sim_r\bar{y}$. By Lemma~\ref{lem.RCAtLeast2}, we know $\rc(G,X)\ge 2$, so if $r$ is $1$ or $2$, the conclusion holds immediately. Thus, we may assume $r\ge 3$, although all we really will need is that $r\ge 2$.
+To show $\rc(G,X)\ge r$, we must show $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^k$. Let $\bar{x},\bar{y} \in X^k$, and assume that $\bar{x}\sim_r\bar{y}$. By the previous lemma, we know $\rc(G,X)\ge 2$, so if $r$ is $1$ or $2$, the conclusion holds immediately. Thus, we may assume $r\ge 3$, although all we really will need is that $r\ge 2$.
 
 Suppose that $\bar{x}$ has repeated entries, say $x_i = x_j$. Then we may use that $\bar{x}\sim_r\bar{y}$ with $r\ge 2$ to see that there is some $g\in G$ such that $g\cdot x_i = y_i$ and $g\cdot x_j = y_j$, so $y_i = y_j$ as well. Thus, repeated entries in $\bar{x}$ correspond to repeated entries in $\bar{y}$ and vice versa. Removing all repeated entries from $\bar{x}$ and the corresponding repeated entries from $\bar{y}$ yields new tuples $\bar{x}',\bar{y}' \in X^{(\ell)}$ for some $\ell\le k$ (where $k-\ell$ counts the number of entries removed). Note that we still have $\bar{x}'\sim_r\bar{y}'$, so we can apply the assumption of the lemma to see that $\bar{x}'\sim_\ell \bar{y}'$. Thus, there exists some $h\in G$ such that $h\cdot \bar{x}' = \bar{y}'$. Adding back in the repeated entries, we have  $h\cdot \bar{x} = \bar{y}$, so $\bar{x}\sim_k\bar{y}$, as desired.
 \end{proof}
@@ -929,9 +927,16 @@ Suppose that $\bar{x}$ has repeated entries, say $x_i = x_j$. Then we may use th
 
 
 \begin{example}\label{exam.SymAltRC}
-Set $X = \{1,\ldots,n\}$, and let's work out $\rc(\Sym(n),X)$ and $\rc(\Alt(n),X)$. 
+Let's work out $\rc(\Sym(n),X)$ and $\rc(\Alt(n),X)$ for $X = \{1,\ldots,n\}$.
 
-In the first case, we find that $\rc(\Sym(n),X)=2$. To see this, remember that we already know that $\rc(\Sym(n),X)\ge 2$
+We'll first show  $\rc(\Sym(n),X)=2$. We know $\rc(\Sym(n),X)\ge 2$ from our work above, so it only remains to show that $\bar{x}\sim_2\bar{y}$ implies $\bar{x}\sim_k\bar{y}$ for  all $\bar{x},\bar{y} \in X^k$ with $k\ge 2$. We've also seen that we may assume $\bar{x},\bar{y} \in X^{(k)}$. Since $\bar{x}$ and $\bar{y}$ have no repeated entries,  there are exactly $n-k$ elements of $X$ that do not appear in $\bar{x}$; label them (in any order) as $x_{k+1},\ldots,x_{n}$, and do the same for $\bar{y}$. Thus, $(x_1,\ldots,x_{k},x_{k+1},\ldots,x_{n})$ lists all elements of $X$ exactly once, and the same is true for $(y_1,\ldots,y_{k},y_{k+1},\ldots,y_{n})$. Define the function $f:X\rightarrow X$ via $f(x_i) = y_i$ for all $1\le i \le n$. Since there are no repeated entries, $f$ is a bijection, and $f\in \Sym(n)$. By design, $f(x_1,\ldots,x_{k}) = (y_1,\ldots,y_{k})$, so $\bar{x}\sim_k\bar{y}$. This finishes our proof that $\rc(\Sym(n),X)=2$.
+
+We now take a look at $\rc(\Alt(n),X)$. This time we'll find that $\rc(\Alt(n),X)= n-1$. We first show $\rc(\Alt(n),X)> n-2$ via an example. Consider the tuples $\bar{x} = (1,2,3\ldots, n)$ and $\bar{y} = (2,1,3\ldots,n)$. Notice that the \emph{only} permutation in $\Sym(n)$ that maps $\bar{x}$ to $\bar{y}$ is the transposition $(12)$. Thus, $\bar{x}\nsim_n\bar{y}$ with respect to the action of $\Alt(n)$ because $(12) \notin \Alt(n)$. However, $\bar{x}\sim_{n-2}\bar{y}$ since if we ignore any two coordinates $i$ and $j$ to get tuples $\bar{x}'$ and $\bar{y}'$, then  $(12)(ij)\bar{x}'=\bar{y}'$ and $(12)(ij) \in \Alt(n)$. Thus, $\bar{x}$ and $\bar{y}$ are $(n-2)$-equivalent but not $n$-equivalent, so $\rc(\Alt(n),X)> n-2$. 
+
+Finally, to see that $\rc(\Alt(n),X)\le n-1$, assume $\bar{x},\bar{y} \in X^{(k)}$ are $(n-1)$-equivalent with $k\ge n-1$. Since there are no repeated entries, $k$ is either $n-1$ or $n$. If $k=n-1$, then clearly   $\bar{x}\sim_k\bar{y}$ since we are assuming the tuples are $(n-1)$-equivalent. If $k=n$, then each of $\bar{x}$ and $\bar{y}$ contain \emph{all} elements of $X$. We are assuming the tuples are $(n-1)$-equivalent, so there is some $\alpha\in \Alt(n)$ such that $\alpha$ maps the first $n-1$ entries of $\bar{x}$ to the first $n-1$ entries of $\bar{y}$. Since $\alpha$ is injective, $\alpha(x_n)$ is not one of the first $n-1$ entries of $\bar{y}$. The only other element of $X$ is $y_n$, so it must be that $\alpha(x_n)=y_n$. Thus, $\bar{x}\sim_k\bar{y}$, and we conclude that $\rc(\Alt(n),X)= n-1$.
+
+
+
 \end{example}
 
 
