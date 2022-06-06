@@ -899,14 +899,26 @@ However, if the tuples are $3$-equivalent, then there  exists a single $g\in G$ 
 
 Notice, in  particular, how $\bar{x}\sim_3\bar{y}$ implies $\bar{x}\sim_2\bar{y}$ since we could use the same $g$ for each of $g_1,g_2,g_3$, but $\bar{x}\sim_2\bar{y}$ does not necessarily imply $\bar{x}\sim_3\bar{y}$.
 
+\begin{lemma*}\label{lem.RCAtLeast2}
+Let $G$ be a permutation group acting on $X$. If $|G| \ge 2$, then $\rc(G,X)\ge 2$. 
+\end{lemma*}
+\begin{proof}
+To establish a lower bound on the relational complexity (as we desire to do here), we typically aim produce an example showing the complexity can be no lower. In this case, we will find tuples $(x_1,x_2),(y_1,y_2)\in X^2$ such that $(x_1,x_2)\sim_1 (y_1,y_2)$ but $(x_1,x_2)\nsim_2(y_1,y_2)$; since $1$-equivalence does not imply $2$-equivalence, the complexity must be larger than $1$.
+
+As $|G| \ge 2$, we may choose $g\in G$ such that $g$ is not the identity. Then there exists some $a\in X$ such that $g\cdot a \neq a$. Set $b=g\cdot a$, and consider the tuples $(a,a)$ and $(a,b)$. These are $1$-equivalent because the identity maps the first coordinate of $(a,a)$ to the first coordinate of $(a,b)$, and $g$ does the same for the second coordinates. We now explain why $(a,a)\nsim_2(a,b)$. Suppose to the contrary that $(a,a)\sim_2(a,b)$; then $h\cdot (a,a)=(a,b)$ for some $h\in G$. This means that $h\cdot a= a$ and $h\cdot a= b$. Since $h\cdot a$ must have a single value and $a\neq b$, we arrive at a contradiction. Thus, $(a,a)\nsim_2(a,b)$.
+\end{proof}
+
+
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % Subsection
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \subsection{First examples}
 
 
-
-
+\begin{example}\label{exam.SymAltRC}
+Set $X = \{1,\ldots,n\}$, and let's work out $\rc(\Sym(n),X)$ and $\rc(\Alt(n),X)$. 
+\end{example}
 
 
 
