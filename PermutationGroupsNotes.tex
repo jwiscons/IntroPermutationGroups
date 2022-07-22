@@ -934,13 +934,57 @@ We'll first show  $\rc(\Sym(n),X)=2$. We know $\rc(\Sym(n),X)\ge 2$ from our wor
 We now take a look at $\rc(\Alt(n),X)$. This time we'll find that $\rc(\Alt(n),X)= n-1$. We first show $\rc(\Alt(n),X)> n-2$ via an example. Consider the tuples $\bar{x} = (1,2,3\ldots, n)$ and $\bar{y} = (2,1,3\ldots,n)$. Notice that the \emph{only} permutation in $\Sym(n)$ that maps $\bar{x}$ to $\bar{y}$ is the transposition $(12)$. Thus, $\bar{x}\nsim_n\bar{y}$ with respect to the action of $\Alt(n)$ because $(12) \notin \Alt(n)$. However, $\bar{x}\sim_{n-2}\bar{y}$ since if we ignore any two coordinates $i$ and $j$ to get tuples $\bar{x}'$ and $\bar{y}'$, then  $(12)(ij)\bar{x}'=\bar{y}'$ and $(12)(ij) \in \Alt(n)$. Thus, $\bar{x}$ and $\bar{y}$ are $(n-2)$-equivalent but not $n$-equivalent, so $\rc(\Alt(n),X)> n-2$. 
 
 Finally, to see that $\rc(\Alt(n),X)\le n-1$, assume $\bar{x},\bar{y} \in X^{(k)}$ are $(n-1)$-equivalent with $k\ge n-1$. Since there are no repeated entries, $k$ is either $n-1$ or $n$. If $k=n-1$, then clearly   $\bar{x}\sim_k\bar{y}$ since we are assuming the tuples are $(n-1)$-equivalent. If $k=n$, then each of $\bar{x}$ and $\bar{y}$ contain \emph{all} elements of $X$. We are assuming the tuples are $(n-1)$-equivalent, so there is some $\alpha\in \Alt(n)$ such that $\alpha$ maps the first $n-1$ entries of $\bar{x}$ to the first $n-1$ entries of $\bar{y}$. Since $\alpha$ is injective, $\alpha(x_n)$ is not one of the first $n-1$ entries of $\bar{y}$. The only other element of $X$ is $y_n$, so it must be that $\alpha(x_n)=y_n$. Thus, $\bar{x}\sim_k\bar{y}$, and we conclude that $\rc(\Alt(n),X)= n-1$.
-
-
-
 \end{example}
 
+\begin{example}\label{exam.AGL1RC}
+We now investigate the complexity of the action of $\AGL_1(\mathbb{R})$  on $\mathbb{R}$ (as defined in Example~\ref{exam.AGL1R}); the result will be that $\rc(\AGL_1(\mathbb{R}),\mathbb{R})= 3$.  As in Example~\ref{exam.SymAltRC}, we consider the lower and upper bounds separately. 
 
+To see that $\rc(\AGL_1(\mathbb{R}),\mathbb{R})\ge 3$, we exhibit tuples that are $2$-equivalent but not $3$-equivalent. Consider $(0,1,2),(0,1,3) \in \mathbb{R}^3$. The fact that the action of $\AGL_1(\mathbb{R})$  on $\mathbb{R}$ is $2$-transitive (as shown in Example~\ref{exam.AGL1R}) implies that the tuples are $2$-equivalent. If desired, it's not difficult to work out explicit witnesses to the $2$-equivalence; here they are:  
+\begin{center}
+\begin{tikzpicture}[line width = 1.2]
+\footnotesize
+\begin{scope}
+\node at (0,1.5) {$(0,1,2)$};
+\node at (0,0) {$(0,1,3)$};
+\draw[->] (0,1.25) -- (0,0.25);
+\draw[->] (-0.3,1.25) -- (-0.3,0.25);
+\node[anchor = 180] at (0.7,0.75) {$id$};
+\end{scope}
 
+\begin{scope}[shift = {(4,0)}]
+\node at (0,1.5) {$(0,1,2)$};
+\node at (0,0) {$(0,1,3)$};
+\draw[->] (-0.3,1.25) -- (-0.3,0.25);
+\draw[->] (0.3,1.25) -- (0.3,0.25);
+\node[anchor = 180] at (0.7,0.75) {$g(x) = (3/2)x$};
+\end{scope}
+
+\begin{scope}[shift = {(8,0)}]
+\node at (0,1.5) {$(0,1,2)$};
+\node at (0,0) {$(0,1,3)$};
+\draw[->] (0,1.25) -- (0,0.25);
+\draw[->] (0.3,1.25) -- (0.3,0.25);
+\node[anchor = 180] at (0.7,0.75) {$h(x) = 2x-1$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+And as we saw in  Example~\ref{exam.AGL1R}, there is no function in $\AGL_1(\mathbb{R})$ mapping $(0,1,2)$ to $(0,1,3)$, so the tuples are not $3$-equivalent.
+
+We next show $\rc(\AGL_1(\mathbb{R}),\mathbb{R})\le 3$. Assume $\bar{x},\bar{y} \in \mathbb{R}^{(k)}$ are $3$-equivalent with $k\ge 3$; we aim to show $\bar{x}\sim_k\bar{y}$. Since  $\bar{x}\sim_3\bar{y}$, there is some $g \in \AGL_1(\mathbb{R})$ taking the first three entries of $\bar{x}$ to the corresponding first three entries of $\bar{y}$. Pictorially, we have the following, with $x_i'$ denoting $g(x_i)$ when $i\ge 4$.
+\begin{center}
+\begin{tikzpicture}[line width = 1.2]
+\footnotesize
+\node at (0,1.5) {$(x_1,x_2,x_3,x_4,\ldots,x_k)$};
+\node at (0,0) {$(y_1,y_2,y_3,x_4',\ldots,x_k')$};
+
+\foreach \x in {0,1,2,3,5.2} {
+\draw[->] ({-1.25+0.47*\x},1.25) -- ({-1.25+0.47*\x},0.25);
+\node[anchor = 0] at (-1.5,0.75) {$g$};
+}
+\end{tikzpicture}
+\end{center}
+Let's show that, in fact, $x_i' = y_i$ for all $i\ge 4$. Now, since $\bar{x}$ and $\bar{y}$ are $3$-equivalent, $(y_1,y_2,y_3,x_4',\ldots,x_k')$ and $\bar{y}$ are also $3$-equivalent (can you see why?). Thus, there is an  $h \in \AGL_1(\mathbb{R})$ taking $(y_1,y_2,x_4')$ to $(y_1,y_2,y_4)$. However, since $h(y_1) = y_1$ and $h(y_2)=y_2$ (with $y_1\neq y_2$ since $\bar{y} \in \mathbb{R}^{(k)}$), it is easy to verify (similar to our work in Example~\ref{exam.AGL1R}) that $h$ is the identity function. So as $h(x_4') = y_4$ and $h$ is the identity, it must be that $x_4' = y_4$. And similarly, we find that $x_i' = y_i$ for all $i\ge 4$, implying that $g$ maps $\bar{x}$ to $\bar{y}$, so  $\bar{x}\sim_k\bar{y}$.
+\end{example}
 
 \vfill
 
