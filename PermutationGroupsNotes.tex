@@ -19,7 +19,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{lemma*}{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{problem}{Problem}
+\newtheorem*{problem*}{Problem}
 \newtheorem{fact}[theorem]{Fact}
 
 
@@ -58,6 +58,8 @@
 \DeclareMathOperator{\PGL}{PGL} 
 \DeclareMathOperator{\PSL}{PSL} 
 \DeclareMathOperator{\Proj}{P} 
+\DeclareMathOperator{\Sub}{Sub} 
+\DeclareMathOperator{\Part}{Part}
 
 \newcommand{\symtetra}{\textsc{Tetra}}
 \newcommand{\rsymtetra}{\textsc{Tetra}^+}
@@ -833,7 +835,7 @@ We are now in a position to address our earlier question: are there examples of 
 The only finite permutation groups with a $4$-transitive action are the symmetric groups, the alternating groups, and the Mathieu groups $M_{11}$, $M_{12}$, $M_{23}$, and $M_{24}$. Consequently, the only finite permutation groups with a $6$-transitive action are the symmetric and alternating groups.
 \end{theorem*}
 
-The proof of this theorem is quite deep, utilizing the \href{https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups}{classification of the finite ``simple'' groups}. A further consequence of this classification project is that all finite permutation groups with a $2$-transitive action are known. This list is quite a bit longer than for $4$-transitive actions, including, for example, the affine and projective groups $\AGL_1(F)$ and $\PGL_2(F)$ (for $F$ a finite field) as well as their generalizations to $\AGL_n(F)$ and $\PGL_n(F)$. 
+The proof of this theorem is quite deep, utilizing the \href{https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups}{classification of the finite simple groups}. A further consequence of this classification project is that all finite permutation groups with a $2$-transitive action are known. This list is quite a bit longer than for $4$-transitive actions, including, for example, the affine and projective groups $\AGL_1(F)$ and $\PGL_2(F)$ (for $F$ a finite field) as well as their generalizations to $\AGL_n(F)$ and $\PGL_n(F)$. 
 %The situation is much different for infinite groups, and there are, for example, a wealth of permutation groups acting on an infinite set that are $k$-transitive for all $k\ge 1$.
 
 
@@ -1002,8 +1004,15 @@ There are many open questions in the study of relational complexity. Two particu
 \item determine the relational complexity of familiar families of permutation groups.
 \end{enumerate}
 
-The most well-known problem of the first type is the attempted classification of the \emph{primitive} permutation groups of relational complexity $2$. 
+An important example of the first type is the (very recently completed) classification of the \href{https://en.wikipedia.org/wiki/Primitive_permutation_group}{primitive} permutation groups of relational complexity $2$. This classification project took a fair amount of effort, spanning roughly a decade and consuming approximately 265 pages over 5 articles \cite{ChG16,WiJ16b, GiSp17,DGS18,GLS21}. 
 
+Let's now take a look at some problems of the second type.
+
+\begin{problem*}
+Starting from the usual action of $\Sym(n)$ on $X=\{1,\ldots,n\}$, we can consider several related actions. Let $\Sub_m(X)$ be the collection of all subsets of $X$ that have cardinality $m$, and let $\Part_{k\times \ell}(X)$ denote the set of all partitions of $X$ into $k$ parts of equal size $\ell$ (so here we must have $n=k\ell$).
+
+For example, $\Sub_2(\{1,2,3,4\}) = \{ \{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\}\}$.
+\end{problem*}
 
 
 
