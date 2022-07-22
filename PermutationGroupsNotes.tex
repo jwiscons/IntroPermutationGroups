@@ -624,7 +624,7 @@ Essentially the same proof we gave in Example~\ref{exam.AGL1R} shows that, for a
 The group $\AGL_1(F)$ can be generalized in at least a couple of ways. One way is to directly adapt the definition to give functions from the vector space $F^n$ to itself by considering functions $f(x) = mx+b$ where $m$ is an $n\times n$ matrix and $b$ an $n$-vector. 
 
 \begin{definition*}
-For $F$ a field, let $\GL_{n}(F)$ denote the set of all \emph{invertible} $n\times n$ matrices with entries from $F$, and define
+For $F$ a field, let $\GL_{n}(F)$ denote the set of all \emph{invertible} $n\times n$ matrices with entries from $F$, which we call the \textbf{general linear group} of degree $n$. Define
 \[\AGL_n(F) = \left\{ f \in \Sym(F^n) \mid \text{$f(\bar{x}) = A\bar{x}+\bar{b}$ for some $A\in \GL_{n}(F)$ and some $\bar{b} \in F^n$}\right\}.\]
 We refer to $\AGL_n(F)$ as the \textbf{affine general linear group} of degree $n$.
 \end{definition*}
@@ -992,6 +992,18 @@ The proof in Example~\ref{exam.AGL1RC} show more generally that $\rc(\AGL_1(\mat
 Also, you may have noticed some similarities in the proofs that $\rc(\Alt(n),\{1,\ldots,n\})= n-1$ and $\rc(\AGL_1(\mathbb{F}),\mathbb{F})= 3$. One general fact in the background of both is that if $G$ acts $k$-transitively but not $(k+1)$-transitively on $X$, then $\rc(G,X)\ge k+1$. Moreover, if the action of $G$ on $X$ is \textbf{sharply} $k$-transitive---this means that for all $(x_1,\ldots,x_k),(y_1,\ldots,y_k)\in X^{(k)}$ there exists a \emph{unique} $g\in G$ such that $g\cdot x_i = y_i$ for all $1\le i\le k$---then $\rc(G,X)= k+1$. (Proving this statement is a good exercise.)
 \end{remark*}
 
+To get a better understanding of the relational complexity of a permutation group, it's valuable to work through several more examples. But for now, we'll just list a few known results and leave it as an exercise to work through the details.
+\begin{center}
+\small
+\tabulinesep = 1.2mm
+\begin{tabu} to 5in {X[c,m]|[1pt]X[0.2c,m]|[1pt]X[c,m]}
+Permutation Group  & RC  & Comments \\ \tabucline[2pt]{-}
+$\Sym(n)$ acting on  $\{1,\ldots,n\}$ & $2$ &  \\ \tabucline[1pt]{-}
+$\Alt(n)$ acting on  $\{1,\ldots,n\}$ & $n-1$ &   \\ \tabucline[1pt]{-}
+$\AGL_n(\mathbb{F})$ acting on  $F^n$ & $n+2$ &   \\ \tabucline[1pt]{-}
+$\PGL_n(F)$ acting on $\Proj^n(F)$ & $n+3$ &   \\ \tabucline[1pt]{-}
+\end{tabu}
+\end{center}
 
 \vfill
 
