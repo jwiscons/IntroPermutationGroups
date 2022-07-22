@@ -19,7 +19,6 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{lemma*}{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
-\newtheorem*{problem*}{Problem}
 \newtheorem{fact}[theorem]{Fact}
 
 
@@ -27,6 +26,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem*{definition*}{Definition}
 \newtheorem{example}{Example}
+\newtheorem*{problem*}{Problem}
 \newtheorem*{exercise*}{Exercise}
 
 \newtheorem{remark}[theorem]{Remark}
@@ -692,7 +692,6 @@ Let's first prove that the action is transitive.  We'll do this by showing that 
 
 To show $G$ acts $3$-transitively, we will show that $(r_1,r_2,r_3)\in \Orb_G(0,1,\infty)$ for every $(r_1,r_2,r_3)\in X^{(3)}$. Since we have shown $G$ acts transitively on $X$, there exists $g\in G$ such that $g(r_3) = \infty$; thus $g(r_1,r_2,r_3) = (s_1,s_1,\infty)$ for some $s_1,s_2\in X$.  Because $r_1,r_2,r_3$ are all distinct and $g$ is a one-to-one, $s_1,s_2,\infty$ are all distinct. In particular, $s_1,s_2 \in \mathbb{R}^{(2)}$, so by $2$-transitivity of $\AGL_1(\mathbb{R})$, there exists $f\in \AGL_1(\mathbb{R})$ such that $f(s_1,s_2) = (0,1)$. As mentioned before, the elements of $\AGL_1(\mathbb{R})$ fix $\infty$, so $f(\infty) = \infty$. Pictorially,
 \[\begin{array}{ccccc}
-\footnotesize
     & g           &        & f           & \\
 r_1 & \rightarrow & s_1   & \rightarrow & 0\\
 r_2 & \rightarrow & s_2   & \rightarrow & 1\\
@@ -1009,9 +1008,18 @@ An important example of the first type is the (very recently completed) classifi
 Let's now take a look at some problems of the second type.
 
 \begin{problem*}
-Starting from the usual action of $\Sym(n)$ on $X=\{1,\ldots,n\}$, we can consider several related actions. Let $\Sub_m(X)$ be the collection of all subsets of $X$ that have cardinality $m$, and let $\Part_{k\times \ell}(X)$ denote the set of all partitions of $X$ into $k$ parts of equal size $\ell$ (so here we must have $n=k\ell$).
+Starting from the usual action of $\Sym(n)$ on $X=\{1,\ldots,n\}$, we can consider several related actions. 
 
-For example, $\Sub_2(\{1,2,3,4\}) = \{ \{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\}\}$.
+Let $\Sub_m(X)$ be the collection of all subsets of $X$ that have cardinality $m$, and let $\Part_{k\times \ell}(X)$ denote the set of all partitions of $X$ into $k$ parts of equal size $\ell$ (so here we must have $n=k\ell$). For example, 
+\begin{align*}
+\Sub_2(\{1,2,3,4\}) &= \{ \{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\}\}\\
+\Part_{3\times 2}(\{1,2,3,4,5,6\}) & = \{ [1,2\mid3,4\mid5,6],[1,2\mid3,5\mid4,6],[1,2\mid3,6\mid4,5],\\
+& \phantom{ = \{ }\; [1,3\mid2,4\mid5,6], [1,4\mid2,3\mid5,6], \ldots \text{(and $10$ more)}\}.
+\end{align*}
+Notice how $\Sym(n)$ acts on $\Sub_m(X)$ and on $\Part_{k\times \ell}(X)$ by applying a given permutation to each element of the subset or partition. Such actions come up naturally in a variety of settings (for example when moving from the action of $\symtetra$ on the \emph{vertices} of the tetrahedron to the action on the \emph{edges}), and we could ask about the corresponding relational complexities. 
+
+
+
 \end{problem*}
 
 
