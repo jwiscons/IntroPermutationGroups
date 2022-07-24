@@ -60,6 +60,7 @@
 \DeclareMathOperator{\Proj}{P} 
 \DeclareMathOperator{\Sub}{Sub} 
 \DeclareMathOperator{\Part}{Part}
+\DeclareMathOperator{\AGammaL}{A\Gamma{}L}
 
 \newcommand{\symtetra}{\textsc{Tetra}}
 \newcommand{\rsymtetra}{\textsc{Tetra}^+}
@@ -1007,7 +1008,7 @@ An important example of the first type is the (very recently completed) classifi
 
 Let's now take a look at some problems of the second type.
 
-\begin{problem*}
+\begin{problem*}[{see~\cite[Example~5,Problem~2]{ChG00}}]
 Starting from the usual action of $\Sym(n)$ on $X=\{1,\ldots,n\}$, we can consider some related actions. 
 
 Let $\Sub_m(X)$ be the collection of all subsets of $X$ that have cardinality $m$, and let $\Part_{k\times \ell}(X)$ denote the set of all partitions of $X$ into $k$ parts of equal size $\ell$ (so here we must have $n=k\ell$). For example, 
@@ -1021,13 +1022,12 @@ Notice how $\Sym(n)$ acts on $\Sub_m(X)$ and on $\Part_{k\times \ell}(X)$ by app
 The complexity $\rc(\Sym(n),\Sub_m(X))$ has in fact been known for some time (see~\cite[Theorem~2]{CMS96}), but $\rc(\Sym(n),\Part_{k\times \ell}(X))$ is in general completely uncharted. The specific case of  $\rc(\Sym(n),\Part_{(n/2)\times 2}(X))$ appears to be solved, but partitions of other shapes have seen little-to-no attention. 
 \end{problem*}
 
+\begin{problem*}
+As remarked above, Example~\ref{exam.AGL1RC} illustrates how to compute $\rc(\AGL_1(F),F)$, and without too much difficulty, one can also work out $\rc(\AGL_n(F),F)$ (finding that it is, with few exceptions, equal to $n+2$). The complexities $\rc(\GL_n(F),F)$ and $\rc(\PGL_n(F),F)$ of the general linear groups and projective linear groups are also known, but the complexities of the associated \href{https://en.wikipedia.org/wiki/Semilinear_map#General_semilinear_group}{semilinear groups} remain unknown. Good bounds on these complexities exist, but the precise value generally has not been determined. For example, it is known that $\rc(\AGammaL_1(F),F)$ is between $3$ and $4$ (and will vary depending on $F$), but little more is currently known. This specific problem is being actively researched, so perhaps we will know more soon. Even so, there appears to be plenty of work to do on this family of problems. 
+\end{problem*}
 
+And that's where we'll leave things for now. 
 
-\begin{center}
-    \textsc{To be continued}\dots
-\end{center}
-
-\newpage
 
 \bibliographystyle{alpha}
 \bibliography{PermutationGroupsNotes}
