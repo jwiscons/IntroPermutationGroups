@@ -850,8 +850,9 @@ The proof of this theorem is quite deep, utilizing the \href{https://en.wikipedi
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \section{Relational complexity}\label{S:rcomp}
 
-Let's now take a look at a relatively new topic about permutation groups, known as \emph{relational complexity}, which has its roots in an area of mathematical logic known as \href{https://en.wikipedia.org/wiki/Model_theory}{model theory}. Although quite of bit of research has occurred recently around relational complexity, there are many questions that remain.
-The definition can be challenging to wrap one's head around at first, and we'll spend some time unpacking what it means. However, the (very important) question of why one would consider this definition in the first place is best answered in model-theoretic terms, but we will simply refer out for that: see for example~\cite[Section~2]{ChG00} or \cite[Section~2.2]{WiJ16b}. Sorry!
+We now take a look at a relatively new topic in permutation group theory, known as \emph{relational complexity}. This has its roots in an area of mathematical logic known as \href{https://en.wikipedia.org/wiki/Model_theory}{model theory}. The origin of relational complexity and motivation for its study is discussed in \cite[Section~2]{ChG00}; a much abbreviated version can be found in \cite[Section~2.2]{WiJ16b}. Although much research has occurred recently around relational complexity, there are many questions that remain. 
+
+The definition may be challenging to wrap one's head around at first, so we'll spend some time unpacking what it means. 
 
 \begin{definition*}
 Let $G$ be a permutation group acting on $X$.
@@ -890,7 +891,7 @@ Let's first just think about the difference between $2$- and $3$-equivalence. Su
 \end{scope}
 \end{tikzpicture}
 \end{center}
-However, if the tuples are $3$-equivalent, then there  exists a single $g\in G$ that simultaneously maps all three elements of $\bar{x}$ to the corresponding elements of $\bar{y}$, i.e.  $g\cdot(x_1,x_2,x_3) = (y_1,y_2,y_3)$. 
+However, if the tuples are $3$-equivalent, then there  is a single $g\in G$  simultaneously mapping all three elements of $\bar{x}$ to the corresponding elements of $\bar{y}$, i.e.  $g\cdot(x_1,x_2,x_3) = (y_1,y_2,y_3)$. 
 \begin{center}
 \begin{tikzpicture}[line width = 1.2]
 \footnotesize
@@ -914,7 +915,7 @@ To establish a lower bound on the relational complexity (as we desire to do here
 As $|G| \ge 2$, we may choose $g\in G$ such that $g$ is not the identity. Then there exists some $a\in X$ such that $g\cdot a \neq a$. Set $b=g\cdot a$, and consider the tuples $(a,a)$ and $(a,b)$. These are $1$-equivalent because the identity maps the first coordinate of $(a,a)$ to the first coordinate of $(a,b)$, and $g$ does the same for the second coordinates. We now explain why $(a,a)\nsim_2(a,b)$. Suppose to the contrary that $(a,a)\sim_2(a,b)$; then $h\cdot (a,a)=(a,b)$ for some $h\in G$. This means that $h\cdot a= a$ and $h\cdot a= b$. Since $h\cdot a$ must have a single value and $a\neq b$, we arrive at a contradiction. Thus, $(a,a)\nsim_2(a,b)$.
 \end{proof}
 
-One (likely unclear) consequence of the previous lemma it that when analyzing the relational complexity of an action, we can focus on tuples with \emph{distinct} entries (i.e.~tuples from $X^{(k)}$), just like we did when analyzing $k$-transitivity. Let's formalize this comment.
+One  consequence of the previous lemma it that when analyzing the relational complexity of an action, we can focus on tuples with \emph{distinct} entries (i.e.~tuples from $X^{(k)}$), just like we did when analyzing $k$-transitivity. Let's formalize this comment.
 
 \begin{lemma*}\label{lem.RCRepeatedEntries}
 Let $G$ be a permutation group acting on $X$ with $|G| \ge 2$. If $\bar{x}\sim_r\bar{y}$ implies $\bar{x}\sim_k\bar{y}$  for all $k\ge r$ and all $\bar{x},\bar{y} \in X^{(k)}$, then  $\rc(G,X)\ge r$.
@@ -929,23 +930,23 @@ Suppose that $\bar{x}$ has repeated entries, say $x_i = x_j$. Then we may use th
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % Subsection
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-\subsection{First examples}
+\subsection{Some examples}
 
 
 \begin{example}\label{exam.SymAltRC}
 Let's work out $\rc(\Sym(n),X)$ and $\rc(\Alt(n),X)$ for $X = \{1,\ldots,n\}$.
 
-We'll first show  $\rc(\Sym(n),X)=2$. We know $\rc(\Sym(n),X)\ge 2$ from our work above, so it only remains to show that $\bar{x}\sim_2\bar{y}$ implies $\bar{x}\sim_k\bar{y}$ for  all $\bar{x},\bar{y} \in X^k$ with $k\ge 2$. We've also seen that we may assume $\bar{x},\bar{y} \in X^{(k)}$. Since $\bar{x}$ and $\bar{y}$ have no repeated entries,  there are exactly $n-k$ elements of $X$ that do not appear in $\bar{x}$; label them (in any order) as $x_{k+1},\ldots,x_{n}$, and do the same for $\bar{y}$. Thus, $(x_1,\ldots,x_{k},x_{k+1},\ldots,x_{n})$ lists all elements of $X$ exactly once, and the same is true for $(y_1,\ldots,y_{k},y_{k+1},\ldots,y_{n})$. Define the function $f:X\rightarrow X$ via $f(x_i) = y_i$ for all $1\le i \le n$. Since there are no repeated entries, $f$ is a bijection, and $f\in \Sym(n)$. By design, $f(x_1,\ldots,x_{k}) = (y_1,\ldots,y_{k})$, so $\bar{x}\sim_k\bar{y}$. This finishes our proof that $\rc(\Sym(n),X)=2$.
+We'll first show  $\rc(\Sym(n),X)=2$. We know $\rc(\Sym(n),X)\ge 2$ from our work above, so it only remains to show that $\bar{x}\sim_2\bar{y}$ implies $\bar{x}\sim_k\bar{y}$ for  all $\bar{x},\bar{y} \in X^k$ with $k\ge 2$. We've also seen that we may assume $\bar{x},\bar{y} \in X^{(k)}$. Then, since $\bar{x}$ and $\bar{y}$ have no repeated entries,  there are exactly $n-k$ elements of $X$ that do not appear in $\bar{x}$; label them (in any order) as $x_{k+1},\ldots,x_{n}$, and do the same for $\bar{y}$. Thus, $(x_1,\ldots,x_{k},x_{k+1},\ldots,x_{n})$ lists all elements of $X$ exactly once, and the same is true for $(y_1,\ldots,y_{k},y_{k+1},\ldots,y_{n})$. Define the function $f:X\rightarrow X$ via $f(x_i) = y_i$ for all $1\le i \le n$. Since there are no repeated entries, $f$ is a bijection, so $f\in \Sym(n)$. By design, $f(x_1,\ldots,x_{k}) = (y_1,\ldots,y_{k})$, so $\bar{x}\sim_k\bar{y}$. This finishes our proof that $\rc(\Sym(n),X)=2$.
 
-We now take a look at $\rc(\Alt(n),X)$. This time we'll find that $\rc(\Alt(n),X)= n-1$. We first show $\rc(\Alt(n),X)> n-2$ via an example. Consider the tuples $\bar{x} = (1,2,3\ldots, n)$ and $\bar{y} = (2,1,3\ldots,n)$. Notice that the \emph{only} permutation in $\Sym(n)$ that maps $\bar{x}$ to $\bar{y}$ is the transposition $(12)$. Thus, $\bar{x}\nsim_n\bar{y}$ with respect to the action of $\Alt(n)$ because $(12) \notin \Alt(n)$. However, $\bar{x}\sim_{n-2}\bar{y}$ since if we ignore any two coordinates $i$ and $j$ to get tuples $\bar{x}'$ and $\bar{y}'$, then  $(12)(ij)\bar{x}'=\bar{y}'$ and $(12)(ij) \in \Alt(n)$. Thus, $\bar{x}$ and $\bar{y}$ are $(n-2)$-equivalent but not $n$-equivalent, so $\rc(\Alt(n),X)> n-2$. 
+We now take a look at $\rc(\Alt(n),X)$. This time we'll find that $\rc(\Alt(n),X)= n-1$. We first show $\rc(\Alt(n),X)> n-2$ via an example. Consider the tuples $\bar{x} = (1,2,3\ldots, n)$ and $\bar{y} = (2,1,3\ldots,n)$. Notice that the only permutation in $\Sym(n)$ that maps $\bar{x}$ to $\bar{y}$ is the transposition $(12)$. Thus, $\bar{x}\nsim_n\bar{y}$ with respect to the action of $\Alt(n)$ because $(12) \notin \Alt(n)$. However, $\bar{x}\sim_{n-2}\bar{y}$ since if we ignore any two coordinates $i$ and $j$ to get tuples $\bar{x}'$ and $\bar{y}'$, then $(ij)\bar{x}' = \bar{x}'$ and $(ij)\bar{y}' = \bar{y}'$, so $(12)(ij)\bar{x}'=\bar{y}'$ with $(12)(ij) \in \Alt(n)$. Thus, $\bar{x}$ and $\bar{y}$ are $(n-2)$-equivalent but not $n$-equivalent, so $\rc(\Alt(n),X)> n-2$. 
 
 Finally, to see that $\rc(\Alt(n),X)\le n-1$, assume $\bar{x},\bar{y} \in X^{(k)}$ are $(n-1)$-equivalent with $k\ge n-1$. Since there are no repeated entries, $k$ is either $n-1$ or $n$. If $k=n-1$, then clearly   $\bar{x}\sim_k\bar{y}$ since we are assuming the tuples are $(n-1)$-equivalent. If $k=n$, then each of $\bar{x}$ and $\bar{y}$ contain \emph{all} elements of $X$. We are assuming the tuples are $(n-1)$-equivalent, so there is some $\alpha\in \Alt(n)$ such that $\alpha$ maps the first $n-1$ entries of $\bar{x}$ to the first $n-1$ entries of $\bar{y}$. Since $\alpha$ is injective, $\alpha(x_n)$ is not one of the first $n-1$ entries of $\bar{y}$. The only other element of $X$ is $y_n$, so it must be that $\alpha(x_n)=y_n$. Thus, $\bar{x}\sim_k\bar{y}$, and we conclude that $\rc(\Alt(n),X)= n-1$.
 \end{example}
 
 \begin{example}\label{exam.AGL1RC}
-We now investigate the complexity of the action of $\AGL_1(\mathbb{R})$  on $\mathbb{R}$ (as defined in Example~\ref{exam.AGL1R}); the result will be that $\rc(\AGL_1(\mathbb{R}),\mathbb{R})= 3$.  As in Example~\ref{exam.SymAltRC}, we consider the lower and upper bounds separately. 
+We now investigate the complexity of the action of $\AGL_1(\mathbb{R})$  on $\mathbb{R}$ (see Example~\ref{exam.AGL1R}); the result will be that $\rc(\AGL_1(\mathbb{R}),\mathbb{R})= 3$.  As in Example~\ref{exam.SymAltRC}, we consider the lower and upper bounds separately. 
 
-To see that $\rc(\AGL_1(\mathbb{R}),\mathbb{R})\ge 3$, we exhibit tuples that are $2$-equivalent but not $3$-equivalent. Consider $(0,1,2),(0,1,3) \in \mathbb{R}^3$. The fact that the action of $\AGL_1(\mathbb{R})$  on $\mathbb{R}$ is $2$-transitive (as shown in Example~\ref{exam.AGL1R}) implies that the tuples are $2$-equivalent. If desired, it's not difficult to work out explicit witnesses to the $2$-equivalence; here they are:  
+To see that $\rc(\AGL_1(\mathbb{R}),\mathbb{R})\ge 3$, we exhibit tuples that are $2$-equivalent but not $3$-equivalent. Consider $(0,1,2),(0,1,3) \in \mathbb{R}^3$. The fact that the action of $\AGL_1(\mathbb{R})$  on $\mathbb{R}$ is $2$-transitive (as shown in Example~\ref{exam.AGL1R}) implies that the tuples are $2$-equivalent. If desired, it's not difficult to work out explicit witnesses to the $2$-equivalences; here they are:  
 \begin{center}
 \begin{tikzpicture}[line width = 1.2]
 \footnotesize
@@ -989,19 +990,19 @@ We next show $\rc(\AGL_1(\mathbb{R}),\mathbb{R})\le 3$. Assume $\bar{x},\bar{y} 
 }
 \end{tikzpicture}
 \end{center}
-Let's show that, in fact, $x_i' = y_i$ for all $i\ge 4$. Now, since $\bar{x}$ and $\bar{y}$ are $3$-equivalent, $(y_1,y_2,y_3,x_4',\ldots,x_k')$ and $\bar{y}$ are also $3$-equivalent (can you see why?). Thus, there is an  $h \in \AGL_1(\mathbb{R})$ taking $(y_1,y_2,x_4')$ to $(y_1,y_2,y_4)$. However, since $h(y_1) = y_1$ and $h(y_2)=y_2$ (with $y_1\neq y_2$ since $\bar{y} \in \mathbb{R}^{(k)}$), it is easy to verify (similar to our work in Example~\ref{exam.AGL1R}) that $h$ is the identity function. So as $h(x_4') = y_4$ and $h$ is the identity, it must be that $x_4' = y_4$. And similarly, we find that $x_i' = y_i$ for all $i\ge 4$, implying that $g$ maps $\bar{x}$ to $\bar{y}$, so  $\bar{x}\sim_k\bar{y}$.
+We'll show that, in fact, $x_i' = y_i$ for all $i\ge 4$. Now, since $\bar{x}$ and $\bar{y}$ are $3$-equivalent, $(y_1,y_2,y_3,x_4',\ldots,x_k')$ and $\bar{y}$ are also $3$-equivalent. (Can you see why?) Thus, there is an  $h \in \AGL_1(\mathbb{R})$ taking $(y_1,y_2,x_4')$ to $(y_1,y_2,y_4)$. However, since $h(y_1) = y_1$ and $h(y_2)=y_2$ (with $y_1\neq y_2$ because $\bar{y} \in \mathbb{R}^{(k)}$), it is easy to verify---similar to our work in Example~\ref{exam.AGL1R}---that $h$ is the identity function. So as $h(x_4') = y_4$ and $h$ is the identity, it must be that $x_4' = y_4$. And similarly, we find that $x_i' = y_i$ for all $i\ge 4$, implying that $g$ maps $\bar{x}$ to $\bar{y}$, so  $\bar{x}\sim_k\bar{y}$.
 \end{example}
 
 \begin{remark*}
-The proof in Example~\ref{exam.AGL1RC} in fact shows, more generally, that $\rc(\AGL_1(F),F)= 3$ whenever $F$ is a field of size at least $4$. And even more generally, one can show that $\rc(\AGL_n(F),F^n)= n+2$ assuming $|F| \ge 4$ (and just that $|F| \ge 3$ when $n\ge 2$). We'll leave it as an exercise to work through the details.
+The proof in Example~\ref{exam.AGL1RC} shows, more generally, that $\rc(\AGL_1(F),F)= 3$ whenever $F$ is a field with  $|F|\ge 4$ . And even more generally, one can show that $\rc(\AGL_n(F),F^n)= n+2$ assuming $|F| \ge 4$ (and just that $|F| \ge 3$ when $n\ge 2$). We'll leave it as an exercise to work through the details.
 
-Also, you may have noticed some similarities in the proofs that $\rc(\Alt(n),\{1,\ldots,n\})= n-1$ and $\rc(\AGL_1(F),F)= 3$. One general fact in the background of both is that if $G$ acts $k$-transitively but not $(k+1)$-transitively on $X$, then $\rc(G,X)\ge k+1$. Moreover, if the action of $G$ on $X$ is \textbf{sharply} $k$-transitive---this means that for all $(x_1,\ldots,x_k),(y_1,\ldots,y_k)\in X^{(k)}$ there exists a \emph{unique} $g\in G$ such that $g\cdot x_i = y_i$ for all $1\le i\le k$---then $\rc(G,X)= k+1$. 
+Also, you may have noticed some similarities in the proofs that $\rc(\Alt(n),\{1,\ldots,n\})= n-1$ and $\rc(\AGL_1(F),F)= 3$. One general fact in the background of both is that if $G$ acts $k$-transitively but not $(k+1)$-transitively on $X$, then $\rc(G,X)\ge k+1$. Moreover, if the action of $G$ on $X$ is \textbf{sharply} $k$-transitive---this means that for all $(x_1,\ldots,x_k),(y_1,\ldots,y_k)\in X^{(k)}$ there exists a \emph{unique} $g\in G$ such that $g\cdot x_i = y_i$ for all $1\le i\le k$---then $\rc(G,X)= k+1$. This is the case for both $\Alt(n)$ and $\AGL_1(F)$.
 \end{remark*}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % Subsection
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-\subsection{Questions}
+\subsection{Problems}
 There are many open questions in the study of relational complexity. Two particular flavors of problems are:
 \begin{enumerate}
 \item classify the permutation groups of a given (typically very small or relatively high) relational complexity;
@@ -1012,7 +1013,7 @@ An important example of the first type is the (very recently completed) classifi
 
 Let's now take a look at some problems of the second type.
 
-\begin{problem*}[{see~\cite[Example~5,Problem~2]{ChG00}}]
+\begin{problem*}[{see~\cite[Example~5, Problem~2]{ChG00}}]
 Starting from the usual action of $\Sym(n)$ on $X=\{1,\ldots,n\}$, we can consider some related actions. 
 
 Let $\Sub_m(X)$ be the collection of all subsets of $X$ that have cardinality $m$, and let $\Part_{k\times \ell}(X)$ denote the set of all partitions of $X$ into $k$ parts of equal size $\ell$ (so here we must have $n=k\ell$). For example, 
@@ -1021,13 +1022,13 @@ Let $\Sub_m(X)$ be the collection of all subsets of $X$ that have cardinality $m
 \Part_{3\times 2}(\{1,2,3,4,5,6\}) & = \{ [1,2\mid3,4\mid5,6],[1,2\mid3,5\mid4,6],[1,2\mid3,6\mid4,5],\\
 & \phantom{ = \{ }\; [1,3\mid2,4\mid5,6], [1,4\mid2,3\mid5,6], \ldots \text{(and $10$ more)}\}.
 \end{align*}
-Notice how $\Sym(n)$ acts on $\Sub_m(X)$ and on $\Part_{k\times \ell}(X)$ by applying a given permutation to each element of the subset or partition. Such actions come up naturally in a variety of settings (for example when moving from the action of $\symtetra$ on the \emph{vertices} of the tetrahedron to the action on the \emph{edges}), and we could ask about the corresponding relational complexities. 
+Notice how $\Sym(n)$ acts on $\Sub_m(X)$ and on $\Part_{k\times \ell}(X)$ by applying a given permutation to each element of the subset or partition. Such actions come up naturally in a variety of settings---for example when moving from the action of $\symtetra$ on the \emph{vertices} of the tetrahedron to the action on the \emph{edges}---and we could ask about the corresponding relational complexities. 
 
-The complexity $\rc(\Sym(n),\Sub_m(X))$ has in fact been known for some time (see~\cite[Theorem~2]{CMS96}), but $\rc(\Sym(n),\Part_{k\times \ell}(X))$ is in general completely uncharted. The specific case of  $\rc(\Sym(n),\Part_{(n/2)\times 2}(X))$ appears to be solved, but partitions of other shapes have seen little-to-no attention. 
+The complexity $\rc(\Sym(n),\Sub_m(X))$ has in fact been known for some time (see~\cite[Theorem~2]{CMS96}), but $\rc(\Sym(n),\Part_{k\times \ell}(X))$ is in general completely uncharted. The specific case of  $\rc(\Sym(n),\Part_{(n/2)\times 2}(X))$ appears to be solved (though is as of yet unpublished), but partitions of other shapes have seen little-to-no attention. 
 \end{problem*}
 
 \begin{problem*}
-As remarked above, Example~\ref{exam.AGL1RC} illustrates how to compute $\rc(\AGL_1(F),F)$, and without too much difficulty, one can also work out $\rc(\AGL_n(F),F)$ (finding that it is, with few exceptions, equal to $n+2$). The complexities $\rc(\GL_n(F),F)$ and $\rc(\PGL_n(F),F)$ of the general linear groups and projective linear groups are also known, but the complexities of the associated \href{https://en.wikipedia.org/wiki/Semilinear_map#General_semilinear_group}{semilinear groups} remain unknown. Good bounds on these complexities exist, but the precise value generally has not been determined. For example, it is known that $\rc(\AGammaL_1(F),F)$ is between $3$ and $4$ (and will vary depending on $F$), but little more is currently known. This specific problem is being actively researched, so perhaps we will know more soon. Even so, there appears to be plenty of work to do on this family of problems. 
+As remarked above, Example~\ref{exam.AGL1RC} illustrates how to compute $\rc(\AGL_1(F),F)$, and without too much difficulty, one can also work out $\rc(\AGL_n(F),F)$ (finding that it is, with few exceptions, equal to $n+2$). The complexities $\rc(\GL_n(F),F)$ and $\rc(\PGL_n(F),F)$ of the general linear groups and projective linear groups are also known, but the complexities of the associated \href{https://en.wikipedia.org/wiki/Semilinear_map#General_semilinear_group}{semilinear groups} remain unknown. Good bounds on these complexities exist, but the precise values has not been determined. For example, it is known that $\rc(\AGammaL_1(F),F)$ is between $3$ and $4$ (and will vary depending on $F$), but little more can be said at present as to when the value is actually $3$ or $4$. This specific problem is being actively researched, so perhaps we will know more soon. Even so, there remains plenty of work to do on this family of problems. 
 \end{problem*}
 
 And that's where we'll leave things for now. 
