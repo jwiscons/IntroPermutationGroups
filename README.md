@@ -1,7 +1,8 @@
 # An Introduction to Permutation Groups
 
 ## Overview
-These notes are being prepared for a [six-part seminar series](http://webpages.csus.edu/wiscons/events/ANTC-series-2022.html) on permutation groups at California State University, Sacramento. The notes are meant to give a casual, example-driven introduction to permutation groups that highlight various core ideas and also introduce current research. 
+These notes were prepared for a [six-part seminar series](http://webpages.csus.edu/wiscons/events/ANTC-series-2022.html) on permutation groups in Spring 2022 at California State University, Sacramento. The series was designed to give a casual, example-driven introduction to permutation groups highlighting various core ideas and introducing current research.
+Many, many thanks to Meagan Pham for helpful discussions throughout the development of the series and for giving the final talk on relational complexity.
 
 ## License Information
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.  You are free to:
