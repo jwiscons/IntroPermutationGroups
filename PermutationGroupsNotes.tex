@@ -83,7 +83,7 @@
 
 
 \begin{document}
-\title[Permutation Groups]{Topics in Permutation Groups\\[7pt] {\footnotesize A short seminar series}}
+\title[Permutation Groups]{An introduction to permutation groups\\[7pt] {\footnotesize A short seminar series}}
 \author{Joshua Wiscons}
 \address{Department of Mathematics and Statistics\\
 California State University, Sacramento\\
@@ -94,15 +94,20 @@ Sacramento, CA 95819, USA}
 
 \maketitle
 
+\vfill
+
 \tableofcontents
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-% Section
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
-%\section{Introduction}\label{S:introduction}
-These (in progress!) notes are being prepared for a six-part seminar series on permutation groups in Spring 2022 at California State University, Sacramento. The seminar is meant to be casual, example driven, hopefully fun, and accessible to anyone having completed a first course in linear algebra, though exposure to groups will help. 
+\vfill
+
+These notes were prepared for a six-part seminar series on permutation groups in Spring 2022 at California State University, Sacramento. The series was designed to be casual, example driven, and accessible to anyone having completed a first course in linear algebra; these notes typically reflect those same principles. The notes were primarily written while the seminar series was in progress, but several updates---including the entire final section---were added after the conclusion.
+
+\bigskip
+
+\noindent The most up-to-date version of these notes on can be found on GitHub:
+\begin{center}
+\url{https://github.com/jwiscons/IntroPermutationGroups}
+\end{center}
 
 \newpage
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
@@ -111,7 +116,7 @@ These (in progress!) notes are being prepared for a six-part seminar series on p
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \section{A first example}\label{S:first.example}
-Let's start by exploring symmetries of a familiar object. We'll also introduce notation as we go.
+The study of groups is the study of symmetry. We'll start by exploring symmetries of a familiar object and also take the opportunity to introduce a little notation as we go.
 
 \begin{example}\label{exam:Tetra}
 Consider a regular tetrahedron, like the \href{https://en.wikipedia.org/wiki/Pyraminx}{Pyraminx} (pictured below). One way to represent the various symmetries is to consider how each symmetry permutes the vertices, so let's label them as follows
