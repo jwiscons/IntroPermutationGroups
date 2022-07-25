@@ -119,7 +119,7 @@ These notes were prepared for a six-part seminar series on permutation groups in
 The study of groups is the study of symmetry. We'll start by exploring symmetries of a familiar object and also take the opportunity to introduce a little notation as we go.
 
 \begin{example}\label{exam:Tetra}
-Consider a regular tetrahedron, like the \href{https://en.wikipedia.org/wiki/Pyraminx}{Pyraminx} (pictured below). One way to represent the various symmetries is to consider how each symmetry permutes the vertices, so let's label them as follows
+Let's take a look at a regular tetrahedron, like the \href{https://en.wikipedia.org/wiki/Pyraminx}{Pyraminx} (pictured below). One way to represent the various symmetries is to consider how each symmetry permutes the vertices, so let's label them as follows:
 
 \begin{center}
 \includegraphics[height=1.3in,angle =20,origin=c]{tetra.png}\hspace{0.75in}
@@ -140,13 +140,13 @@ Consider a regular tetrahedron, like the \href{https://en.wikipedia.org/wiki/Pyr
 Let $\symtetra$ denote the collection of \emph{all} symmetries of this object and $\rsymtetra$ denote just the \emph{rotational} symmetries. We will view each element of $\symtetra$ (and $\rsymtetra$) as a permutation of the set $\{1,2,3,4\}$. The collection of \emph{all} permutations of $\{1,2,3,4\}$ will be denoted $\Sym(4)$, so with this notation we have $\rsymtetra\subseteq \symtetra\subseteq \Sym(4)$. Let's pause to define and introduce notation for $\Sym(X)$ generally.
 
 \begin{definition*}
-Let $X$ be a set. The \textbf{symmetric group} on $X$, denoted $\Sym(X)$, is the set of all permutations of $X$. When $X = \{1,2,\ldots, n\}$, we  write $\Sym(n)$ in place of $\Sym(X)$. We also adopt the following notation.
+Let $X$ be a set. The \textbf{symmetric group} on $X$, denoted $\Sym(X)$, is the set of all \href{https://en.wikipedia.org/wiki/Permutation}{permutations} of $X$. When $X = \{1,2,\ldots, n\}$, we  write $\Sym(n)$ in place of $\Sym(X)$. We also adopt the following notation.
 \begin{itemize}
 \item The identity permutation will be denoted $\id_X$ (or just $\id$), so $\id_X(x)=x$ for all $x\in X$.
-\item For $\sigma,\tau\in \Sym(X)$,  $\sigma\tau$ denotes composition of $\sigma$ and $\tau$, so $\sigma\tau(x) = \sigma(\tau(x))$ for all $x\in X$. 
+\item For $\sigma,\tau\in \Sym(X)$,  $\sigma\tau$ denotes composition of $\sigma$ and $\tau$, i.e.~$\sigma\tau(x) = \sigma(\tau(x))$ for all $x\in X$. As usual, $\sigma^{-1}$ denotes the inverse of $\sigma$, so $\sigma\sigma^{-1} = \sigma^{-1}\sigma = \id_X$.
 \item For $\sigma\in \Sym(X)$ and $n\in \naturals$, $\sigma^n$ denotes the composition of $\sigma$ with itself $n$-times, and $\sigma^{-n}$ denotes the composition of $\sigma^{-1}$ with itself $n$-times.
 \end{itemize}
-We may refer to $\sigma\tau$ as the \emph{product} of $\sigma$ and $\tau$, but in $\Sym(X)$ this means composition.
+We sometimes refer to $\sigma\tau$ as the \emph{product} of $\sigma$ and $\tau$; in $\Sym(X)$ this means composition.
 \end{definition*}
 
 Let's resume our investigation of the tetrahedron, and list some  elements of $\rsymtetra$. As we do, we'll introduce additional notation for writing permutations. 
@@ -189,10 +189,10 @@ The only permutations in $\Sym(4)$ we have not yet considered are the so-called 
 \rsymtetra &= \begin{Bmatrix}
 \id,(12)(34), (13)(24), (14)(23),  \\
 (234), (243), (134), (143), (124), (142), (123), (132)
-\end{Bmatrix}
+\end{Bmatrix}.
 \end{align*}
 
-Incidentally, although we already knew that the composition of any two symmetries of the tetrahedron was another symmetry, we can now directly verify that the composition of any two \emph{rotational} symmetries is another \emph{rotational} symmetry (e.g. $\gamma\delta = (234)(134) = (14)(23) = \alpha$).
+Incidentally, although we already knew that the composition of any two symmetries of the tetrahedron was another symmetry, we can now use our description of $\rsymtetra$ to directly verify that the composition of any two \emph{rotational} symmetries is another \emph{rotational} symmetry (e.g. $\gamma\delta = (234)(134) = (14)(23) = \alpha$).
 \end{example}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
