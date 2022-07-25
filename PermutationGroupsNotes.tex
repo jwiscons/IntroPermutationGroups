@@ -12,6 +12,7 @@
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground} 
 
+
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem*{theorem*}{Theorem}
@@ -215,7 +216,7 @@ In this case, we say $G$ is a \textbf{permutation group} on $X$.
 \end{definition*}
 
 \begin{example}
-As can be seen from Example~\ref{exam:Tetra}, $\symtetra$ and $\rsymtetra$ can both be viewed as permutation groups on $\{1,2,3,4\}$.
+As can be seen from Example~\ref{exam:Tetra}, $\symtetra$ and $\rsymtetra$ can  be viewed as subgroups $\Sym(4)$, hence as permutation groups on $\{1,2,3,4\}$.
 \end{example}
 
 
@@ -250,10 +251,10 @@ Every permutation in $\Sym(n)$ is either even or odd, but not both.
 \begin{proof}[Proof idea.]
 One first observation to make is that it suffices to prove $\id$ is (even but) not odd. Indeed, suppose we know that $\id$ is not odd. Towards a contradiction, assume an arbitrary $\sigma$ is both even and odd. Then we can write $\sigma = \tau_1\cdots\tau_{k} = \rho_1\cdots\rho_{\ell}$ where $k$ is even, $\ell$ is odd, and each $\tau_i$ and each $\rho_j$ is a transposition. This implies  $\id = \sigma\sigma^{-1} = \tau_1\cdots\tau_{k}\rho_{\ell}^{-1}\cdots\rho_1^{-1}$. As the inverse of a transposition is itself, $\id  = \tau_1\cdots\tau_{k}\rho_{\ell}\cdots\rho_1$, implying that $\id$ is odd (since  $k$ is even and $\ell$ is odd), a contradiction.
 
-So, it remains to show $\id$ is not odd. This is where most of the effort is, and we will simply refer out---sorry! A quick search of the internet will turn up various proofs of this lemma, but one nice (and  detailed) outline of the proof can be found in Dana Ernst's abstract algebra book, see \cite[Theorem 4.103]{ErD-Algebra}.
+So, it remains to show $\id$ is not odd. This is where most of the effort is, and we will simply leave it as an exercise. If desired, a quick search of the internet will turn up various proofs of this lemma.
 \end{proof}
 
-Notice that composing two even permutations results in another even permutation. Moreover, the previous ``proof'' discussed that $\id$ is even, and it also indicated that a permutation has the same parity as its inverse. Combining this, we arrive at the following fundamental theorem-definition.
+Notice that composing two even permutations results in another even permutation. Moreover, the previous ``proof'' discussed that $\id$ is even, and it also indicated that a permutation has the same parity (being even or odd) as its inverse. Combining this, we arrive at the following fundamental theorem/definition.
 
 \begin{theorem*}
 Let $\Alt(n)$ denote the collection of all even permutations in $\Sym(n)$. Then $\Alt(n)$ is a subgroup of $\Sym(n)$; it is called the \textbf{alternating group}.
@@ -262,7 +263,7 @@ Let $\Alt(n)$ denote the collection of all even permutations in $\Sym(n)$. Then 
 \begin{example}
 A concise summary of Example~\ref{exam:Tetra} is that if we view the elements of $\symtetra$ as permutations of $\{1,2,3,4\}$, then $\symtetra = \Sym(4)$ and $\rsymtetra = \Alt(4)$. 
 
-Note that, technically, the elements of $\symtetra$ operate on the entire tetrahedron, not just the vertices. Thus $\symtetra$ is not literally equal to $\Sym(4)$, so it is  more precise to use the language of \href{https://en.wikipedia.org/wiki/Isomorphism}{isomorphisms} and write $\symtetra \cong \Sym(4)$ and $\rsymtetra \cong \Alt(4)$. But in general, we won't much worry about this.
+Well, technically, the elements of $\symtetra$ operate on the entire tetrahedron, not just the vertices. Thus $\symtetra$ is not literally equal to $\Sym(4)$, so it is  more precise to use the language of \href{https://en.wikipedia.org/wiki/Isomorphism}{isomorphisms} and write $\symtetra \cong \Sym(4)$ and $\rsymtetra \cong \Alt(4)$. 
 \end{example}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
@@ -270,9 +271,7 @@ Note that, technically, the elements of $\symtetra$ operate on the entire tetrah
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \subsection{One group, many actions}
 
-When analyzing a permutation group $G$ on some set $X$, it is  important to keep in mind that $G$ may very well also permute other sets, and simultaneously studying the various ``actions'' of $G$ can be quite advantageous. For example, $\symtetra$ is first and foremost acting on the points of $\mathbb{R}^3$ (in a way that preserves the tetrahedron); however, the way we studied $\symtetra$ was via its action on the \emph{vertices} of the tetrahedron. However, $\symtetra$ also permutes the \emph{edges} of the tetrahedron as well as the \emph{faces} and various other related sets of objects. 
-
-Let's formalize the notion of an ``action'', and then see how to leverage this idea with an example.
+When analyzing a permutation group $G$ on some set $X$, it is  important to keep in mind that $G$ may very well also permute other sets, and simultaneously studying the various ``actions'' of $G$ can be quite advantageous. For example, $\symtetra$ is first and foremost acting on the points of $\mathbb{R}^3$ (in a way that preserves the structure of the tetrahedron); however, the way we studied $\symtetra$ was via its action on the \emph{vertices} of the tetrahedron. Of course, $\symtetra$ also permutes the \emph{edges} of the tetrahedron as well as the \emph{faces} and various other related sets of objects. Let's formalize the notion of an ``action'', and then see how to leverage this idea with an example.
 
 \begin{remark*}
 In what follows, we will occasionally use a phrase like ``let $G$ be a group.'' This can be taken to mean that $G$ is a permutation group on some set $X$, but we don't care what $X$ is. The point is that sometimes we only want to focus on how the elements of the group $G$ interact with each other as opposed to how they permute the elements of $X$. If you've encountered the definition of an abstract group, then you could alternatively interpret ``let $G$ be a group'' as ``let $G$ be an abstract group.''
@@ -287,12 +286,12 @@ Let $G$ be a group. We say $G$ \textbf{acts} on a set $Y$ if each $g\in G$ defin
 We say the action is \textbf{faithful} if the only element of $G$ satisfying $g\cdot y = y$ for all $y\in Y$ is $\id$.
 \end{definition*}
 
-In reading the definition, one should think of the notation $g\cdot y$ as $g(y)$. In what follows, we will often use the notation $g\cdot y$ in place of $g(y)$ for permutation groups too.
+In reading the definition, one should think of the notation $g\cdot y$ as $g(y)$. %In what follows, we will often use the notation $g\cdot y$ in place of $g(y)$ for permutation groups too.
 
 \begin{remark*}
-If $G$ acts on a set $Y$, then the definition  implies that each element of $G$ can be viewed as a \emph{permutation} of $Y$. However, it is possible for different elements of $G$ to represent the same permutation of $Y$. (We'll see this in a later example.) 
+If $G$ acts on a set $Y$, then the definition  implies that each element of $G$ can be viewed as a \emph{permutation} of $Y$. However, it is possible for different elements of $G$ to represent the same permutation of $Y$; we'll see this in a later example.
 
-Now, if the action is faithful, then it can be shown that different elements of $G$ always act as different permutations of $Y$, so in this case, we can view $G$ as a permutation group on $Y$ (even though $G$ may also be a permutation group on some other set $X$). Technical note: the sentence ``we can view $G$ as a permutation group on $Y$'' really means that ``$G$ is isomorphic to a permutation group on $Y$''.
+Now, if the action is faithful, then it can be shown that different elements of $G$ always act as different permutations of $Y$, so in this case, we can view $G$ as a permutation group on $Y$ (even though $G$ may also be a permutation group on some other set $X$). %Technical note: the sentence ``we can view $G$ as a permutation group on $Y$'' really means that ``$G$ is isomorphic to a permutation group on $Y$''.
 \end{remark*}
 
 \begin{example}\label{exam:Cube}
@@ -439,7 +438,7 @@ Let's look at the symmetries of a regular icosahedron. (The Rubik-esque version 
 \end{tikzpicture}
 \end{center}
 
-This time, we'll just try to count the number of symmetries in $\rsymicosa$ and leave the  determination of which permutations are in $\rsymicosa$ (and $\symicosa$) as an exercise. Let $\sigma\in \rsymicosa$ denote an arbitrary rotational symmetry. In two-line notation, $\sigma$ has the form
+This time, we'll just count the number of symmetries in $\rsymicosa$ and leave the  determination of which permutations are in $\rsymicosa$ (and $\symicosa$) as an exercise. Let $\sigma\in \rsymicosa$ denote an arbitrary rotational symmetry. In two-line notation, $\sigma$ has the form
 \[\sigma = \begin{pmatrix}
 1 & 2 & 3 & \cdots & 12\\
 \sigma(1) & \sigma(2) & \sigma(3) & \cdots & \sigma(12)\\
@@ -474,7 +473,7 @@ Next, instead of studying orbits with respect to $G$, we changed to considering 
 Finally, we considered the stabilizer $G_{1,2}$. This time we found that $G_{1,2}$ must fix every vertex, so for each vertex $k$, $\Orb_{G_{1,2}}(k) = \{k\}$.
 \end{example}
 
-On thing to notice in Example~\ref{exam:IcosaOrbits} is how the orbits of $G_1$ \emph{partitioned} the set $\{1,2,\dots, 12\}$ (into non-overlapping pieces). Of course, the same is trivially true of the orbits of $G$ since there was only one orbit. This observation about the orbits partitioning the set being acted upon is true in general.
+On thing to notice in Example~\ref{exam:IcosaOrbits} is how the orbits of $G_1$ \emph{partitioned} the set $\{1,2,\dots, 12\}$ into non-overlapping pieces. Of course, the same is trivially true of the orbits of $G$ since there was only one orbit. This observation about the orbits partitioning the set being acted upon is true in general.
 
 \begin{lemma*}
 Let $G$ act on $X$. Then each $x\in X$ is contained in one and only one orbit of $G$.
@@ -487,7 +486,7 @@ The key thing to remember is that $G$ represents a permutation group, so $G$ is 
 so $a\in \Orb_G(y)$. The proof that $\Orb_G(y)\subseteq\Orb_G(x)$ is similar.
 \end{proof}
 
-Returning to Example~\ref{exam:Icosa}, note that not only did we consider orbits and stabilizers, but we also combined information about the two in order to count the size of the set being acted upon. The next theorem formalizes that process. In the statement of the theorem we use the notation $|A|$ to denote the cardinality (i.e.~the ``size'') of the set $A$.
+Returning to Example~\ref{exam:Icosa}, note that not only did we consider orbits and stabilizers, but we also combined information about the two in order to count the size of the set being acted upon. The next theorem formalizes that process. In the statement of the theorem we use the notation $|A|$ to denote the \href{https://en.wikipedia.org/wiki/Cardinality}{cardinality} of the set $A$.
 
 \begin{theorem*}
 Let $G$ act on $X$, and let $x\in X$. Then $|G| = |\Orb_G(x)|\cdot |G_x|$.
@@ -539,7 +538,7 @@ Let's revisit Example~\ref{exam:Icosa} yet again. Set $G = \rsymicosa$.
 
 The previous theorem says that $|G| = |\Orb_G(1)|\cdot |G_1|$. Since we know that $\Orb_G(1) = \{1,2,\dots, 12\}$, we get that $|G| = 12\cdot |G_1|$. 
 
-We can now apply the same theorem to $G_1$ to get that $|G_1| = |\Orb_{G_1}(2)|\cdot |G_{1,2}|$, so as $\Orb_{G_1}(2) = \{2,3,4,5,6\}$, $|G_1| = 5\cdot |G_{1,2}|$. Combining with what we've already learned, we get that $|G| = 12\cdot 5 \cdot |G_{1,2}|$.
+We can now apply the theorem to $G_1$ to get that $|G_1| = |\Orb_{G_1}(2)|\cdot |G_{1,2}|$, so as $\Orb_{G_1}(2) = \{2,3,4,5,6\}$, $|G_1| = 5\cdot |G_{1,2}|$. Combining with what we've already learned, we get that $|G| = 12\cdot 5 \cdot |G_{1,2}|$.
 
 And finally, we also know that $G_{1,2}$ must fix every vertex, but the only element of $G$ fixing all vertices is the identity. Thus, $G_{1,2} = \{\id\}$, so $|G_{1,2}| = 1$. Thus,  $|G| = 12\cdot 5 \cdot 1 = 60$.
 \end{example}
@@ -558,7 +557,7 @@ Let's work towards another approach to measuring symmetry. We saw that there is 
 But now, what if we ask about pairs of vertices. Notice that any two vertices of a tetrahedron can be simultaneously moved to any other two vertices. However, the same is \emph{not} true for the cube: a pair of antipodal vertices can never be simultaneously moved to a pair of non-antipodal vertices. And this difference suggests that we might view the tetrahedron as being more symmetric than the cube. Let's formalize this idea.
 
 \begin{notation}
-For $X$ a set, $X^n$ denotes the set of all $n$-tuples with entries from $X$, and $X^{(n)}$ denotes the subset of $X^n$ consisting of tuples with distinct entries, i.e. \[X^{(n)} = \{(x_1,\ldots,x_n) \in X^n \mid \text{$x_i \neq x_j$ for all $i\neq j$}\}.\]
+For $X$ a set, $X^n$ denotes the set of all $n$-tuples with entries from $X$, and $X^{(n)}$ denotes the subset of $X^n$ consisting of tuples with \emph{distinct} entries, i.e. \[X^{(n)} = \{(x_1,\ldots,x_n) \in X^n \mid \text{$x_i \neq x_j$ for all $i\neq j$}\}.\]
 \end{notation}
 
 For example, $(1,2,3,2)\notin \mathbb{Z}^{(4)}$ because of the repeated $2$, but $(1,2,3,7)\in \mathbb{Z}^{(4)}$ as there is no repetition in the coordinates. 
