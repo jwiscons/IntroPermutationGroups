@@ -12,6 +12,13 @@
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground} 
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
@@ -101,14 +108,14 @@ Sacramento, CA 95819, USA}
 
 \vfill
 
-These notes were prepared for a six-part seminar series on permutation groups in Spring 2022 at California State University, Sacramento. The series was designed to be casual, example driven, and accessible to anyone having completed a first course in linear algebra; these notes typically reflect those same principles. The notes were primarily written while the seminar series was in progress, but several updates---including the entire final section---were added after the conclusion.
+\section*{About the notes}
+These notes were prepared for a six-part seminar series on permutation groups in Spring 2022 at California State University, Sacramento. The series was designed to be casual, example driven, and accessible to anyone having completed a first course in linear algebra; these notes typically reflect those same principles. %The notes were primarily written while the seminar series was in progress, but several updates---including the entire final section---were added after the conclusion. 
+Many, many thanks to Meagan Pham for helpful discussions about the seminar series throughout and for giving the final talk on relational complexity.
 
-\bigskip
 
-\noindent The most up-to-date version of these notes on can be found on GitHub:
-\begin{center}
-\url{https://github.com/jwiscons/IntroPermutationGroups}
-\end{center}
+\vfill
+
+\blfootnote{The most up-to-date version of these notes on can be found on GitHub: \url{https://github.com/jwiscons/IntroPermutationGroups}}
 
 \newpage
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
