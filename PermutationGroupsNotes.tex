@@ -564,7 +564,7 @@ For example, $(1,2,3,2)\notin \mathbb{Z}^{(4)}$ because of the repeated $2$, but
 
 \begin{remark*}
 If $G$ acts on $X$, then $G$ acts coordinatewise on both $X^{n}$ and $X^{(n)}$ via the rule \[g\cdot(x_1,\ldots,x_n) = (g\cdot x_1,\ldots,g\cdot x_n).\] 
-The main reason for looking at the action of $G$ on $X^{n}$ or $X^{(n)}$ is to study how a group element $g$ \emph{simultaneously} acts on $x_1,\ldots,x_n$ instead of simply studying how $g$ acts on single elements of $X$. This better captures relationships between $x_1,\ldots,x_n$ (similar to how pairs of vertices on a cube might be antipodal or not). 
+The main reason for looking at the action of $G$ on $X^{n}$ or $X^{(n)}$ is to study how a group element $g$ \emph{simultaneously} acts on $x_1,\ldots,x_n$ instead of simply studying how $g$ acts on single elements of $X$. This captures relationships between $x_1,\ldots,x_n$, similar to how pairs of vertices on a cube might be antipodal or not. 
 \end{remark*}
 
 \begin{definition*}
@@ -574,7 +574,7 @@ We say that an action of $G$ on $X$ is \textbf{transitive} if $G$ has only one o
 \begin{example}
 Let's revisit Examples~\ref{exam:Tetra} and \ref{exam:Cube} through the lens of $k$-transitivity. 
 
-The comment above that any two  (distinct) vertices of a tetrahedron can be moved to any other two (distinct) vertices is stating that the action of $\symtetra$ on the vertices of  the tetrahedron is $2$-transitive. In fact, such pairs of vertices can be moved using a rotation, so $\rsymtetra$ also acts $2$-transitively on the vertices. And more is true: $\symtetra$ in fact acts $4$-transitively on the vertices. 
+The comment above that any two  (distinct) vertices of a tetrahedron can be moved to any other two (distinct) vertices is stating that the action of $\symtetra$ on the vertices of  the tetrahedron is $2$-transitive. In fact, such pairs of vertices can be moved using a rotation, so $\rsymtetra$ also acts $2$-transitively on the vertices. And more is true: $\symtetra$  acts $4$-transitively on the vertices. 
 
 As for the cube, $\symcube$ and $\rsymcube$ act transitively on the vertices, but neither act $2$-transitively. However, $\rsymcube$ does act $4$-transitively on the four diagonals of the cube. 
 \end{example}
@@ -618,7 +618,7 @@ The function representing the line connecting the two points will take $r_1$ to 
 Could it be $3$-transitive? If it were,  there would have to be some $f\in \AGL_1(\mathbb{R})$ such that $f (0,1,2) = (0,1,3)$, meaning that $f(0) = 0$, $f(1) = 1$, and $f(2) = 3$. Writing $f(x) = mx+b$, $f(0) = 0$ implies $b=0$, and then $f(1) = 1$ implies $a = 1$. Thus $f$ is the identity function $f(x) = x$, but then there is no way that $f(2) = 3$. So no, the action is not $3$-transitive.
 \end{example}
 
-In Example~\ref{exam.AGL1R}, we considered the group of invertible linear functions from $\mathbb{R}$ to $\mathbb{R}$, but we used very little specific knowledge of $\mathbb{R}$. For example, we would have reached the same conclusion for invertible linear functions from $\mathbb{Q}$ to $\mathbb{Q}$. As such, we will define $\AGL_1(F)$ where $F$ is any \href{https://en.wikipedia.org/wiki/Field_(mathematics)}{field}; roughly, a \textbf{field} is a mathematical structure with ``well-behaved'' notions of addition and multiplication as well as additive and multiplicative inverses. Examples of fields include $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$, but not $\mathbb{Z}$ because of the lack of multiplicative inverses for most elements. There are also  examples of finite fields like $\mathbb{Z}_p$; here $\mathbb{Z}_p$ represents (congruence classes of) the integers with arithmetic performed modulo a prime number $p$.
+In Example~\ref{exam.AGL1R}, we considered the group of invertible linear functions from $\mathbb{R}$ to $\mathbb{R}$, but we used very little specific knowledge of $\mathbb{R}$. For example, we would have reached the same conclusion for invertible linear functions from $\mathbb{Q}$ to $\mathbb{Q}$. As such, we will define $\AGL_1(F)$ where $F$ is any \href{https://en.wikipedia.org/wiki/Field_(mathematics)}{field}; roughly, a \textbf{field} is a mathematical structure with ``well-behaved'' notions of addition and multiplication as well as additive and multiplicative inverses. Examples of fields include $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$, but not $\mathbb{Z}$ because of the lack of multiplicative inverses for most elements. There are also  finite fields, an example being $\mathbb{Z}_p$ where $\mathbb{Z}_p$ represents (congruence classes of) the integers with arithmetic performed modulo a prime number $p$.
 
 \begin{definition*}
 For $F$ a field, we define \[\AGL_1(F) = \left\{ f \in \Sym(F) \mid \text{$f(x) = mx+b$ for some $m,b\in F$ with $m\neq 0$}\right\}.\]
@@ -637,10 +637,10 @@ We refer to $\AGL_n(F)$ as the \textbf{affine general linear group} of degree $n
 \end{definition*}
 
 \begin{remark*}
-We won't explore $\AGL_n(F)$  here, but it's worth mentioning that---just like $\AGL_1(F)$---each permutation group in this family (for all choices of $n$ and $F$) acts  $2$-transitively on the vector space $F^n$, and provided $|F| \ge 4$, the action is not $3$-transitive.
+We won't explore $\AGL_n(F)$  here, but it's worth mentioning that---just like $\AGL_1(F)$---each  group in this family (for all choices of $n$ and $F$) acts  $2$-transitively on the vector space $F^n$, and provided $|F| \ge 4$, the action is not $3$-transitive.
 \end{remark*}
 
-Let's now take a look at another way to generalize the construction of $\AGL_1(F)$. This time we will encounter a family of permutation groups that are typically $3$-transitive but not $4$-transitive.
+Let's  take a look at another way to generalize the construction of $\AGL_1(F)$. This time we will encounter a family of permutation groups that are typically $3$-transitive but not $4$-transitive.
 
 \begin{example}\label{exam.PGL1R}
 In Example~\ref{exam.AGL1R}, we looked at certain functions on the line $\mathbb{R}$; this time we will work with the projective line $\Proj^1(\mathbb{R}) = \mathbb{R} \cup \{\infty\}$. Right now, $\infty$ is just another symbol we are adding to the set $\mathbb{R}$, but we can think of $\Proj^1(\mathbb{R})$ as a circle where $\infty$ connects the positive and negative ``ends'' of the real line together.
@@ -727,14 +727,14 @@ We have now seen (families of) examples of $2$- and $3$-transitive groups, so wh
 Are there examples of $4$-transitive actions other than those naturally associated to $\Sym(n)$ and $\Alt(n)$ (as in Example~\ref{exam.SymAltKTrans})? 
 \end{question*}
 
-It turns out that the answer is yes, but if we only consider finite groups, then the number of such examples can be counted on just one hand! Let's meet some of them.
+It turns out that the answer is yes, but if we only consider finite groups, then the number of such examples can be counted on just one hand! Let's meet them.
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % Subsection
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \subsection{Mathieu groups}
 
-The \href{https://en.wikipedia.org/wiki/Mathieu_group}{Mathieu groups},  denoted $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, and $M_{24}$, are a special collection of  permutation groups that act on, respectively, sets of size $11$, $12$, $22$, $23$, and $24$. These groups can be described many different ways. We'll focus on a construction of $M_{12}$ given by Conway and Sloane \cite{CoSl99} and further concretized by examples using \href{https://www.gap-system.org}{GAP} in a \href{https://www.cantorsparadise.com/the-rubiks-icosahedron-and-the-mathieu-group-m12-444ae64d1ac8}{blogpost by Nasmith}. From that, we will also be able to describe $M_{11}$, but we won't say much about the other three.
+The \href{https://en.wikipedia.org/wiki/Mathieu_group}{Mathieu groups},  denoted $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, and $M_{24}$, are a special collection of  permutation groups that act on, respectively, sets of size $11$, $12$, $22$, $23$, and $24$. These groups can be described many different ways. We'll focus on a construction of $M_{12}$ given by Conway and Sloane \cite{CoSl99} and further concretized by examples using \href{https://www.gap-system.org}{GAP} in a \href{https://www.cantorsparadise.com/the-rubiks-icosahedron-and-the-mathieu-group-m12-444ae64d1ac8}{blogpost by Nasmith} \cite{NaB-Icosa}. From that, we will also be able to describe $M_{11}$.
 
 \begin{example}[{\cite[Section~18 of Chapter~11]{CoSl99} and \cite{NaB-Icosa}}]\label{exam.M12}
 We return to the icosahedron. This time, instead of looking at its symmetries, we'll describe a type of game to scramble the vertices via certain allowable moves. The moves we will describe are similar in spirit to those you could perform on a \href{https://en.wikipedia.org/wiki/Dogic}{Dogic} (pictured in Example~\ref{exam:Icosa}), but they cannot actually be done on one.
@@ -818,7 +818,7 @@ For example, $\tau_5\tau_1\tau_1\tau_4 \in T$, and we can work out that
 \end{align*}
 In the language of group theory, $T$ is the group \textbf{generated} by the twists; this just means $T$ is the smallest permutation group on the vertices that contains the twists. We write this in symbols as $T = \langle \tau_i \mid 1\le i\le 12\rangle$.
 
-One question whose answer may not be so clear is: can we generate \emph{all} possible permutations of the vertices using these twists? In other words, is it true that $T= \Sym(12)$? Try to work it out a bit\ldots but the answer is no. However, the twists can generate a lot of the permutations (in fact half of them), and it turns out that $T= \Alt(12)$.
+One question whose answer may not be so clear is: can we generate \emph{all} possible permutations of the vertices using these twists? In other words, is it true that $T= \Sym(12)$? Try to work it out\ldots but the answer is no. However, the twists can generate a lot of the permutations (in fact half of them), and it turns out that $T= \Alt(12)$.
 
 Now let's slightly change the game. This time, every time we perform a clockwise twist $\tau_i$ it must be followed immediately by some counter-clockwise ``untwist'' $\tau_j^{-1}$. The set of permutations realized using this process will be denoted $TU$ for the \emph{twist-untwist} group. The group $TU$ is generated by permutations of the form $\tau_j^{-1}\tau_i$; or symbolically, $TU = \langle \tau_j^{-1}\tau_i \mid 1\le i,j\le 12\rangle.$ 
 
@@ -833,7 +833,7 @@ Is the action $2$-transitive? Can we simultaneously take vertices $1$ and $2$ to
 In fact, $M_{12}$ acts $5$-transitively on the vertices! Moreover, the stabilizer in $M_{12}$ of five distinct vertices is just the identity permutation, which implies that  $M_{12}$ is \emph{not} $6$-transitive. Also, that fact that $M_{12}$ acts $5$-transitively can be used to quickly see that the stabilizer of the vertex $1$ acts $4$-transitively, so $M_{11}$ is an example of a $4$-transitive group (as is $M_{12}$).
 \end{example}
 
-We are now in a position to address our earlier question: are there examples of $4$-transitive actions other than those naturally associated to $\Sym(n)$ and $\Alt(n)$? Yes, there are, but  more importantly, in the case of finite permutation groups, we know them all.
+We now can answer our earlier question: are there examples of $4$-transitive actions other than those naturally associated to $\Sym(n)$ and $\Alt(n)$? Yes, there are (e.g.~$M_{11}$ and $M_{12}$), but  more importantly, in the case of finite permutation groups, we know them all.
 
 \begin{theorem*}[see for example {\cite[Theorem~4.11]{CaP99}}]
 The only finite permutation groups with a $4$-transitive action are the symmetric groups, the alternating groups, and the Mathieu groups $M_{11}$, $M_{12}$, $M_{23}$, and $M_{24}$. Consequently, the only finite permutation groups with a $6$-transitive action are the symmetric and alternating groups.
